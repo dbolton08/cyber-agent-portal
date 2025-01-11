@@ -26,10 +26,9 @@ const Console = () => {
             </div>
             <div className="font-mono text-sm space-y-2">
               <div className="flex items-center text-matrix-green">
-                <span className="mr-2">></span>
+                <span className="mr-2">&gt;</span>
                 <span className="animate-pulse">_</span>
               </div>
-              {/* Add more console content here */}
             </div>
           </div>
         </div>

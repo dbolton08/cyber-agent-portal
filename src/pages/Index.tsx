@@ -5,7 +5,7 @@ import GlitchText from "../components/GlitchText";
 import HexagonGrid from "../components/HexagonGrid";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Blockchain, Brain, Cpu, Network2, Shield } from "lucide-react";
+import { Blockchain, Brain, Cpu, Network, Shield } from "lucide-react";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -124,7 +124,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="cyber-panel p-6">
               <h2 className="cyber-text text-xl mb-6 flex items-center">
-                <Network2 className="mr-2" />
+                <Network className="mr-2" />
                 Network Statistics
               </h2>
               <div className="space-y-6">
