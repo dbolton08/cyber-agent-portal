@@ -4,6 +4,8 @@ import MatrixRain from "../components/MatrixRain";
 import GlitchText from "../components/GlitchText";
 import HexagonGrid from "../components/HexagonGrid";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Blockchain, Brain, Cpu, Network2, Shield } from "lucide-react";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -28,7 +30,7 @@ const Index = () => {
       <TopNav />
       <Sidebar />
       
-      <main className="pt-24 pb-16 px-4 md:pr-72 relative">
+      <main className="pt-24 pb-16 px-4 md:ml-0 md:mr-64 relative z-10">
         <div className="container mx-auto">
           {/* Hero Section */}
           <div className="cyber-panel p-8 mb-8 relative overflow-hidden group">
@@ -44,96 +46,128 @@ const Index = () => {
               </div>
               <GlitchText 
                 text="MATRIX ORACLE"
-                className="block text-5xl md:text-6xl mb-6"
+                className="block text-4xl md:text-6xl mb-6"
               />
               <p className="cyber-text text-lg md:text-xl mb-8 leading-relaxed max-w-3xl">
-                Enter a realm where artificial intelligence and human consciousness converge. 
+                Enter a realm where artificial intelligence and human consciousness converge on the Sui blockchain. 
                 The Matrix Oracle stands as your gateway to digital enlightenment, powered by 
                 next-generation AI agents ready to unlock the secrets of the digital universe.
               </p>
-              <button className="cyber-button group relative">
+              <Link to="/console" className="cyber-button group relative">
                 <span className="relative z-10">Initialize Connection</span>
                 <div className="absolute inset-0 bg-matrix-green/20 group-hover:bg-matrix-green/30 transition-colors duration-300" />
-              </button>
+              </Link>
             </div>
           </div>
 
-          {/* Agent Status Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="cyber-panel p-6 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-matrix-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <h2 className="cyber-text text-xl mb-4 flex items-center">
-                <span className="h-2 w-2 bg-matrix-green rounded-full mr-2 animate-pulse" />
-                Active Agents
-              </h2>
-              <div className="space-y-4">
-                {["Sentinel", "Guardian", "Observer"].map((agent, i) => (
-                  <div key={agent} className="flex items-center space-x-3 cyber-text">
-                    <div className="h-3 w-3 rounded-full bg-matrix-green animate-cyber-pulse" 
-                         style={{ animationDelay: `${i * 200}ms` }} />
-                    <span>{agent}</span>
-                    <div className="flex-1 h-[1px] bg-matrix-green/30" />
-                    <span className="text-matrix-light">ONLINE</span>
+          {/* Feature Grid */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                icon: Brain,
+                title: "Neural Processing",
+                description: "Advanced AI algorithms powered by quantum computing"
+              },
+              {
+                icon: Blockchain,
+                title: "Sui Integration",
+                description: "Seamless blockchain operations on Sui's high-performance network"
+              },
+              {
+                icon: Shield,
+                title: "Secure Protocol",
+                description: "Military-grade encryption for all operations"
+              }
+            ].map((feature, i) => (
+              <div key={feature.title} 
+                   className="cyber-panel p-6 group hover:scale-[1.02] transition-transform duration-300"
+                   style={{ animationDelay: `${i * 200}ms` }}>
+                <feature.icon className="w-12 h-12 mb-4 text-matrix-light" />
+                <h3 className="text-xl mb-2 cyber-text">{feature.title}</h3>
+                <p className="text-matrix-green/80">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Sui Blockchain Section */}
+          <div className="cyber-panel p-8 mb-12 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-matrix-green/5 to-transparent opacity-50" />
+            <div className="relative z-10">
+              <GlitchText 
+                text="SUI BLOCKCHAIN INTEGRATION"
+                className="block text-2xl md:text-3xl mb-6"
+              />
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <h3 className="text-xl cyber-text">High Performance</h3>
+                  <p className="text-matrix-green/80">
+                    Leveraging Sui's parallel execution engine for unprecedented throughput and minimal latency.
+                  </p>
+                  <div className="h-2 bg-cyber-dark rounded overflow-hidden">
+                    <div className="h-full bg-matrix-light w-[95%] rounded-r animate-pulse" />
                   </div>
-                ))}
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-xl cyber-text">Smart Contracts</h3>
+                  <p className="text-matrix-green/80">
+                    Advanced Move-based smart contracts ensuring secure and efficient operations.
+                  </p>
+                  <div className="h-2 bg-cyber-dark rounded overflow-hidden">
+                    <div className="h-full bg-matrix-light w-[90%] rounded-r animate-pulse" />
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
+          {/* Live Network Stats */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="cyber-panel p-6">
-              <h2 className="cyber-text text-xl mb-4">System Metrics</h2>
+              <h2 className="cyber-text text-xl mb-6 flex items-center">
+                <Network2 className="mr-2" />
+                Network Statistics
+              </h2>
               <div className="space-y-6">
                 {[
-                  { name: "Neural Network", value: 92 },
-                  { name: "Quantum Processing", value: 87 },
-                  { name: "Data Streams", value: 95 }
-                ].map((metric) => (
-                  <div key={metric.name} className="space-y-2">
+                  { name: "Network Uptime", value: 99.99 },
+                  { name: "Transaction Speed", value: 95 },
+                  { name: "Node Distribution", value: 88 }
+                ].map((stat) => (
+                  <div key={stat.name} className="space-y-2">
                     <div className="flex justify-between cyber-text text-sm">
-                      <span>{metric.name}</span>
-                      <span>{metric.value}%</span>
+                      <span>{stat.name}</span>
+                      <span>{stat.value}%</span>
                     </div>
                     <div className="h-2 bg-cyber-dark rounded overflow-hidden">
                       <div 
                         className="h-full bg-matrix-green rounded-r transition-all duration-1000 animate-pulse"
-                        style={{ width: `${metric.value}%` }}
+                        style={{ width: `${stat.value}%` }}
                       />
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* Neural Network Status */}
-          <div className="cyber-panel p-6 relative overflow-hidden">
-            <div className="absolute inset-0 flex">
-              {[...Array(20)].map((_, i) => (
-                <div 
-                  key={i} 
-                  className="flex-1 overflow-hidden"
-                  style={{ 
-                    animationDelay: `${i * 0.1}s`,
-                    opacity: 0.1 + (i % 3) * 0.1
-                  }}
-                >
-                  <div className="animate-matrix-rain text-matrix-green font-mono text-xl">
-                    {[...Array(30)].map((_, j) => (
-                      <div key={j} className="whitespace-pre">
-                        {String.fromCharCode(33 + Math.random() * 93)}
-                      </div>
-                    ))}
+            <div className="cyber-panel p-6">
+              <h2 className="cyber-text text-xl mb-6 flex items-center">
+                <Cpu className="mr-2" />
+                System Performance
+              </h2>
+              <div className="space-y-4">
+                {[
+                  { name: "AI Processing", value: "1.2 PetaFLOPS" },
+                  { name: "Active Nodes", value: "1,337" },
+                  { name: "Response Time", value: "< 100ms" }
+                ].map((metric) => (
+                  <div key={metric.name} className="flex items-center space-x-3 cyber-text">
+                    <div className="h-3 w-3 rounded-full bg-matrix-green animate-cyber-pulse" />
+                    <span>{metric.name}</span>
+                    <div className="flex-1 h-[1px] bg-matrix-green/30" />
+                    <span className="text-matrix-light">{metric.value}</span>
                   </div>
-                </div>
-              ))}
-            </div>
-            <div className="relative z-10">
-              <GlitchText 
-                text="Neural Network Status"
-                className="block text-2xl mb-4"
-              />
-              <p className="cyber-text">
-                Matrix protocols active. All systems operational.
-              </p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
