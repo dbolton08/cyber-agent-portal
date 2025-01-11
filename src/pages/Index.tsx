@@ -5,7 +5,7 @@ import GlitchText from "../components/GlitchText";
 import HexagonGrid from "../components/HexagonGrid";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Blockchain, Brain, Cpu, Network, Shield } from "lucide-react";
+import { Database, Brain, Cpu, Network, Shield } from "lucide-react";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -69,7 +69,7 @@ const Index = () => {
                 description: "Advanced AI algorithms powered by quantum computing"
               },
               {
-                icon: Blockchain,
+                icon: Database,
                 title: "Sui Integration",
                 description: "Seamless blockchain operations on Sui's high-performance network"
               },
