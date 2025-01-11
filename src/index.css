@@ -34,23 +34,26 @@
     
     --radius: 0.5rem;
   }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  
   body {
     @apply bg-cyber-dark text-matrix-green;
     background-size: 50px 50px;
     background-image: var(--cyber-grid);
   }
 
-  /* Cyberpunk-specific utilities */
+  /* Enhanced Cyberpunk Utilities */
   .cyber-panel {
-    @apply bg-cyber-panel backdrop-blur-sm border border-matrix-green/30 rounded-lg shadow-lg;
+    @apply bg-cyber-panel backdrop-blur-sm border border-matrix-green/30 rounded-lg shadow-lg relative;
     box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+  }
+
+  .cyber-panel::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-matrix-green/5 to-transparent opacity-0 transition-opacity duration-500;
+  }
+
+  .cyber-panel:hover::before {
+    @apply opacity-100;
   }
 
   .cyber-text {
@@ -59,9 +62,20 @@
   }
 
   .cyber-button {
-    @apply px-4 py-2 bg-transparent border border-matrix-green text-matrix-green 
+    @apply px-6 py-3 bg-transparent border border-matrix-green text-matrix-green 
            hover:bg-matrix-green/10 transition-all duration-300 rounded
-           hover:shadow-[0_0_10px_rgba(0,255,65,0.5)] cyber-text;
+           hover:shadow-[0_0_20px_rgba(0,255,65,0.5)] cyber-text relative
+           overflow-hidden;
+  }
+
+  .cyber-button::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-matrix-green/20 to-transparent opacity-0;
+    transition: opacity 0.3s ease;
+  }
+
+  .cyber-button:hover::after {
+    @apply opacity-100;
   }
 
   .matrix-glow {
@@ -69,4 +83,28 @@
                 0 0 20px rgba(0, 255, 65, 0.2),
                 0 0 30px rgba(0, 255, 65, 0.1);
   }
+
+  /* Matrix Rain Animation */
+  .matrix-rain-container {
+    @apply fixed inset-0 pointer-events-none overflow-hidden opacity-20;
+  }
+
+  .matrix-rain {
+    @apply text-matrix-green font-mono text-xl;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cyber-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-matrix-green/30 rounded hover:bg-matrix-green/50 transition-colors duration-300;
 }

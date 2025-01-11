@@ -1,37 +1,66 @@
 import TopNav from "../components/TopNav";
 import Sidebar from "../components/Sidebar";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-cyber-grid">
+    <div className="min-h-screen bg-cyber-grid overflow-hidden">
+      <div className="fixed top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-b from-cyber-dark/80 to-transparent" />
+      </div>
+      
       <TopNav />
       <Sidebar />
       
-      <main className="pt-24 pb-16 px-4 md:pr-72">
+      <main className="pt-24 pb-16 px-4 md:pr-72 relative">
         <div className="container mx-auto">
-          <div className="cyber-panel p-8 mb-8">
-            <div className="mb-2 text-matrix-light text-sm tracking-wider">CIPHER</div>
-            <h1 className="cyber-text text-4xl mb-6">GENERATES DYSTOPIAN, TECH-DRIVEN LORE</h1>
-            <p className="cyber-text text-lg mb-8 leading-relaxed">
-              Dive into a dystopian, cyberpunk reality where technology reigns supreme and
-              the line between humanity and artificial intelligence blurs. Agent X, the
-              enigmatic AI known as Cipher, weaves intricate, tech-driven lore of a world on
-              the brink—dark cityscapes, rogue algorithms, and the relentless pursuit of
-              freedom in the shadow of corporate dominion.
-            </p>
-            <button className="cyber-button">
-              Initialize Sequence
-            </button>
+          {/* Hero Section */}
+          <div className="cyber-panel p-8 mb-8 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyber-dark/90 to-transparent z-10" />
+            <img 
+              src="/lovable-uploads/24412fd5-2e8b-4dd9-8497-3a6cb8a279a6.png"
+              alt="Matrix Oracle"
+              className="absolute inset-0 w-full h-full object-cover object-center opacity-40"
+            />
+            <div className="relative z-20">
+              <div className="mb-2 text-matrix-light text-sm tracking-wider animate-pulse">SYSTEM ONLINE</div>
+              <h1 className="cyber-text text-5xl md:text-6xl mb-6 animate-text-flicker">MATRIX ORACLE</h1>
+              <p className="cyber-text text-lg md:text-xl mb-8 leading-relaxed max-w-3xl">
+                Enter a realm where artificial intelligence and human consciousness converge. 
+                The Matrix Oracle stands as your gateway to digital enlightenment, powered by 
+                next-generation AI agents ready to unlock the secrets of the digital universe.
+              </p>
+              <button className="cyber-button group relative">
+                <span className="relative z-10">Initialize Connection</span>
+                <div className="absolute inset-0 bg-matrix-green/20 group-hover:bg-matrix-green/30 transition-colors duration-300" />
+              </button>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="cyber-panel p-6">
-              <h2 className="cyber-text text-xl mb-4">Agent Status</h2>
+          {/* Agent Status Grid */}
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="cyber-panel p-6 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-matrix-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <h2 className="cyber-text text-xl mb-4 flex items-center">
+                <span className="h-2 w-2 bg-matrix-green rounded-full mr-2 animate-pulse" />
+                Active Agents
+              </h2>
               <div className="space-y-4">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="flex items-center space-x-3">
-                    <div className="h-3 w-3 rounded-full bg-matrix-green animate-cyber-pulse" />
-                    <span className="cyber-text">Agent {i} - Active</span>
+                {["Sentinel", "Guardian", "Observer"].map((agent, i) => (
+                  <div key={agent} className="flex items-center space-x-3 cyber-text">
+                    <div className="h-3 w-3 rounded-full bg-matrix-green animate-cyber-pulse" 
+                         style={{ animationDelay: `${i * 200}ms` }} />
+                    <span>{agent}</span>
+                    <div className="flex-1 h-[1px] bg-matrix-green/30" />
+                    <span className="text-matrix-light">ONLINE</span>
                   </div>
                 ))}
               </div>
@@ -39,19 +68,56 @@ const Index = () => {
 
             <div className="cyber-panel p-6">
               <h2 className="cyber-text text-xl mb-4">System Metrics</h2>
-              <div className="space-y-4">
-                {["Network", "Processing", "Memory"].map((metric) => (
-                  <div key={metric} className="space-y-2">
+              <div className="space-y-6">
+                {[
+                  { name: "Neural Network", value: 92 },
+                  { name: "Quantum Processing", value: 87 },
+                  { name: "Data Streams", value: 95 }
+                ].map((metric) => (
+                  <div key={metric.name} className="space-y-2">
                     <div className="flex justify-between cyber-text text-sm">
-                      <span>{metric}</span>
-                      <span>98%</span>
+                      <span>{metric.name}</span>
+                      <span>{metric.value}%</span>
                     </div>
-                    <div className="h-2 bg-cyber-dark rounded">
-                      <div className="h-full w-[98%] bg-matrix-green rounded animate-pulse" />
+                    <div className="h-2 bg-cyber-dark rounded overflow-hidden">
+                      <div 
+                        className="h-full bg-matrix-green rounded-r transition-all duration-1000 animate-pulse"
+                        style={{ width: `${metric.value}%` }}
+                      />
                     </div>
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+
+          {/* Digital Rain Effect */}
+          <div className="cyber-panel p-6 relative overflow-hidden">
+            <div className="absolute inset-0 flex">
+              {[...Array(20)].map((_, i) => (
+                <div 
+                  key={i} 
+                  className="flex-1 overflow-hidden"
+                  style={{ 
+                    animationDelay: `${i * 0.1}s`,
+                    opacity: 0.1 + (i % 3) * 0.1
+                  }}
+                >
+                  <div className="animate-matrix-rain text-matrix-green font-mono text-xl">
+                    {[...Array(30)].map((_, j) => (
+                      <div key={j} className="whitespace-pre">
+                        {String.fromCharCode(33 + Math.random() * 93)}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="relative z-10">
+              <h2 className="cyber-text text-2xl mb-4">Neural Network Status</h2>
+              <p className="cyber-text">
+                Matrix protocols active. All systems operational.
+              </p>
             </div>
           </div>
         </div>
