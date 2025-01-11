@@ -30,8 +30,8 @@ const Index = () => {
       <TopNav />
       <Sidebar />
       
-      <main className="pt-24 pb-16 px-4 md:ml-0 md:mr-64 relative z-10">
-        <div className="container mx-auto">
+      <main className="relative z-10 pt-24 pb-16 px-4 md:px-8 transition-all duration-300 md:ml-64">
+        <div className="container mx-auto max-w-6xl">
           {/* Hero Section */}
           <div className="cyber-panel p-8 mb-8 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-cyber-dark/90 to-transparent z-10" />
@@ -89,7 +89,6 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Sui Blockchain Section */}
           <div className="cyber-panel p-8 mb-12 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-matrix-green/5 to-transparent opacity-50" />
             <div className="relative z-10">

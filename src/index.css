@@ -62,7 +62,7 @@
   }
 
   body {
-    @apply bg-cyber-dark text-matrix-green;
+    @apply bg-cyber-dark text-matrix-green overflow-x-hidden;
     background-size: 50px 50px;
     background-image: var(--cyber-grid);
   }
