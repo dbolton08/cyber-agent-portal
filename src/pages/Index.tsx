@@ -1,18 +1,26 @@
 import TopNav from "../components/TopNav";
 import Sidebar from "../components/Sidebar";
+import MatrixRain from "../components/MatrixRain";
+import GlitchText from "../components/GlitchText";
+import HexagonGrid from "../components/HexagonGrid";
 import { useEffect, useState } from "react";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
+    setIsLoaded(true);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <div className="min-h-screen bg-cyber-grid overflow-hidden">
+      <MatrixRain />
+      <HexagonGrid />
+      
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-cyber-dark/80 to-transparent" />
       </div>
@@ -23,16 +31,21 @@ const Index = () => {
       <main className="pt-24 pb-16 px-4 md:pr-72 relative">
         <div className="container mx-auto">
           {/* Hero Section */}
-          <div className="cyber-panel p-8 mb-8 relative overflow-hidden">
+          <div className="cyber-panel p-8 mb-8 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-cyber-dark/90 to-transparent z-10" />
             <img 
               src="/lovable-uploads/24412fd5-2e8b-4dd9-8497-3a6cb8a279a6.png"
               alt="Matrix Oracle"
-              className="absolute inset-0 w-full h-full object-cover object-center opacity-40"
+              className="absolute inset-0 w-full h-full object-cover object-center opacity-40 group-hover:scale-105 transition-transform duration-1000"
             />
             <div className="relative z-20">
-              <div className="mb-2 text-matrix-light text-sm tracking-wider animate-pulse">SYSTEM ONLINE</div>
-              <h1 className="cyber-text text-5xl md:text-6xl mb-6 animate-text-flicker">MATRIX ORACLE</h1>
+              <div className="mb-2 text-matrix-light text-sm tracking-wider animate-pulse">
+                SYSTEM ONLINE
+              </div>
+              <GlitchText 
+                text="MATRIX ORACLE"
+                className="block text-5xl md:text-6xl mb-6"
+              />
               <p className="cyber-text text-lg md:text-xl mb-8 leading-relaxed max-w-3xl">
                 Enter a realm where artificial intelligence and human consciousness converge. 
                 The Matrix Oracle stands as your gateway to digital enlightenment, powered by 
@@ -91,7 +104,7 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Digital Rain Effect */}
+          {/* Neural Network Status */}
           <div className="cyber-panel p-6 relative overflow-hidden">
             <div className="absolute inset-0 flex">
               {[...Array(20)].map((_, i) => (
@@ -114,7 +127,10 @@ const Index = () => {
               ))}
             </div>
             <div className="relative z-10">
-              <h2 className="cyber-text text-2xl mb-4">Neural Network Status</h2>
+              <GlitchText 
+                text="Neural Network Status"
+                className="block text-2xl mb-4"
+              />
               <p className="cyber-text">
                 Matrix protocols active. All systems operational.
               </p>
