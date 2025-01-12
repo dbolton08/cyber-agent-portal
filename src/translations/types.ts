@@ -6,15 +6,20 @@ export interface CommonTranslations {
   initConnection: string;
   projectOverview: string;
   liveStatus: string;
-  platformStatus: string;
   online: string;
   error: string;
   errorFetchingData: string;
   home: string;
-  connectWallet: string;
 }
 
 export interface SystemTranslations {
+  agents: string;
+  console: string;
+  systems: string;
+  network: string;
+  platformStatus: string;
+  systemStatus: string;
+  online: string;
   totalStake: string;
   epoch: string;
   marketCap: string;

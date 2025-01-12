@@ -7,14 +7,19 @@ export const en: Translations = {
     initConnection: "Initialize Connection",
     projectOverview: "PROJECT OVERVIEW",
     liveStatus: "System Status: Online",
-    platformStatus: "Platform Status",
     online: "Online",
     error: "Error",
     errorFetchingData: "Error fetching data. Please try again later.",
-    home: "Home",
-    connectWallet: "Connect SUI Wallet"
+    home: "Home"
   },
   system: {
+    agents: "Agents",
+    console: "Console",
+    systems: "Systems",
+    network: "Network",
+    platformStatus: "Platform Status",
+    systemStatus: "System Status",
+    online: "Online",
     totalStake: "Total Stake",
     epoch: "Epoch",
     marketCap: "Market Cap",
