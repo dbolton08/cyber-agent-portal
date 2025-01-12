@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import MatrixRain from "../components/MatrixRain";
 import GlitchText from "../components/GlitchText";
 import HexagonGrid from "../components/HexagonGrid";
+import SuiStats from "../components/SuiStats";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Database, Shield, Cpu, Network, ExternalLink } from "lucide-react";
