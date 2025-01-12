@@ -34,53 +34,8 @@ const Index = () => {
     }
   };
 
-  const features = [
-    {
-      icon: Brain,
-      title: translations.features.neuralProcessing,
-      description: translations.features.neuralDesc,
-      color: "from-purple-500 to-pink-500",
-      image: "/placeholder_images/photo-1485827404703-89b55fcc595e.jpg"
-    },
-    {
-      icon: Shield,
-      title: translations.features.secureProtocol,
-      description: translations.features.secureDesc,
-      color: "from-green-500 to-emerald-500",
-      image: "/placeholder_images/photo-1526374965328-7f61d4dc18c5.jpg"
-    },
-    {
-      icon: Cpu,
-      title: translations.features.performance,
-      description: translations.features.performanceDesc,
-      color: "from-blue-500 to-cyan-500",
-      image: "/placeholder_images/photo-1518770660439-4636190af475.jpg"
-    },
-    {
-      icon: Sparkles,
-      title: translations.features.aiAssistant,
-      description: translations.features.aiAssistantDesc,
-      color: "from-yellow-500 to-orange-500",
-      image: "/placeholder_images/photo-1518770660439-4636190af475.jpg"
-    },
-    {
-      icon: Network,
-      title: translations.features.quantumComputing,
-      description: translations.features.quantumDesc,
-      color: "from-red-500 to-rose-500",
-      image: "/placeholder_images/photo-1518770660439-4636190af475.jpg"
-    },
-    {
-      icon: Database,
-      title: translations.features.neuralInterface,
-      description: translations.features.neuralInterfaceDesc,
-      color: "from-indigo-500 to-violet-500",
-      image: "/placeholder_images/photo-1518770660439-4636190af475.jpg"
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-cyber-grid overflow-hidden">
+    <div className="min-h-screen bg-cyber-dark overflow-hidden">
       <MatrixRain />
       <HexagonGrid />
       
@@ -102,64 +57,76 @@ const Index = () => {
         className="relative z-10 pt-24 pb-16 px-4 md:px-8 transition-all duration-300 md:pr-72"
       >
         <div className="container mx-auto max-w-6xl">
-          <div className="cyber-panel p-8 mb-8 relative overflow-hidden group">
+          {/* Hero Section */}
+          <div className="cyber-panel p-8 mb-12 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-cyber-dark/90 to-transparent z-10" />
-            <div className="relative z-20">
-              <div className="mb-2 text-matrix-light text-sm tracking-wider animate-pulse">
-                {translations.common.online}
+            <div className="relative z-20 flex flex-col md:flex-row items-center gap-8">
+              <div className="flex-1">
+                <div className="mb-2 text-matrix-light text-sm tracking-wider animate-pulse">
+                  {translations.common.online}
+                </div>
+                <GlitchText 
+                  text={translations.common.welcome}
+                  className="block text-4xl md:text-6xl mb-6 font-bold"
+                />
+                <p className="cyber-text text-lg md:text-xl mb-8 leading-relaxed max-w-3xl opacity-80">
+                  {translations.common.subtitle}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link 
+                    to="/console" 
+                    className="cyber-button group relative inline-flex justify-center overflow-hidden"
+                  >
+                    <span className="relative z-10 flex items-center">
+                      <Cpu className="w-5 h-5 mr-2" />
+                      {translations.common.initConnection}
+                    </span>
+                  </Link>
+                </div>
               </div>
-              <GlitchText 
-                text={translations.common.welcome}
-                className="block text-4xl md:text-6xl mb-6"
-              />
-              <p className="cyber-text text-lg md:text-xl mb-8 leading-relaxed max-w-3xl">
-                {translations.common.subtitle}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/console" 
-                  className="cyber-button group relative inline-flex justify-center overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center">
-                    <Cpu className="w-5 h-5 mr-2" />
-                    {translations.common.initConnection}
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-matrix-green/20 to-matrix-accent/20 group-hover:from-matrix-green/30 group-hover:to-matrix-accent/30 transition-colors duration-300" />
-                </Link>
+              <div className="flex-1 relative">
+                <img 
+                  src="/placeholder_images/photo-1485827404703-89b55fcc595e.jpg"
+                  alt="AI Agent"
+                  className="rounded-lg w-full max-w-md mx-auto transform hover:scale-105 transition-transform duration-500 border border-matrix-green/30 shadow-lg shadow-matrix-green/20"
+                />
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-matrix-green/30 to-matrix-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg blur" />
               </div>
-            </div>
-            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-96 h-96 opacity-30">
-              <img 
-                src="/placeholder_images/photo-1485827404703-89b55fcc595e.jpg"
-                alt="AI Bot"
-                className="w-full h-full object-cover rounded-full animate-float"
-              />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {features.map((feature, i) => (
+          {/* Features Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Brain,
+                title: translations.features.neuralProcessing,
+                description: translations.features.neuralDesc,
+                color: "from-matrix-green/20 to-matrix-accent/20"
+              },
+              {
+                icon: Shield,
+                title: translations.features.secureProtocol,
+                description: translations.features.secureDesc,
+                color: "from-matrix-green/20 to-matrix-light/20"
+              },
+              {
+                icon: Cpu,
+                title: translations.features.performance,
+                description: translations.features.performanceDesc,
+                color: "from-matrix-accent/20 to-matrix-green/20"
+              }
+            ].map((feature, i) => (
               <div 
                 key={feature.title}
                 className="cyber-panel p-6 group hover:scale-[1.02] transition-all duration-300 relative overflow-hidden"
-                style={{ 
-                  animationDelay: `${i * 200}ms`,
-                  background: `linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.8))`
-                }}
+                style={{ animationDelay: `${i * 200}ms` }}
               >
-                <div className={`absolute inset-0 opacity-10 bg-gradient-to-br ${feature.color}`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color}`} />
                 <feature.icon className="w-12 h-12 mb-4 text-matrix-light relative z-10" />
                 <h3 className="text-xl mb-2 cyber-text relative z-10">{feature.title}</h3>
                 <p className="text-matrix-green/80 relative z-10">{feature.description}</p>
-                {feature.image && (
-                  <div className="absolute -bottom-10 -right-10 w-32 h-32 opacity-20 rotate-12">
-                    <img 
-                      src={feature.image}
-                      alt={feature.title}
-                      className="w-full h-full object-cover rounded-lg"
-                    />
-                  </div>
-                )}
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-matrix-green/5 rounded-full blur-3xl transform translate-x-16 translate-y-16" />
               </div>
             ))}
           </div>
