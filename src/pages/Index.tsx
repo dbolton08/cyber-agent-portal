@@ -130,9 +130,9 @@ const Index = () => {
             </div>
             <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-96 h-96 opacity-30">
               <img 
-                src="/placeholder_images/photo-1487058792275-0ad4aaf24ca7.jpg"
-                alt="AI Visualization"
-                className="w-full h-full object-cover rounded-full animate-slow-spin"
+                src="/placeholder_images/photo-1485827404703-89b55fcc595e.jpg"
+                alt="AI Bot"
+                className="w-full h-full object-cover rounded-full animate-float"
               />
             </div>
           </div>
@@ -162,28 +162,6 @@ const Index = () => {
                 )}
               </div>
             ))}
-          </div>
-
-          <div className="cyber-panel p-8 mb-8">
-            <GlitchText text={translations.common.projectOverview} className="text-2xl mb-6" />
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <p className="cyber-text leading-relaxed">
-                  {translations.common.subtitle}
-                </p>
-                <div className="flex items-center space-x-2 text-matrix-light">
-                  <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
-                  <span>{translations.common.liveStatus}</span>
-                </div>
-              </div>
-              <div className="cyber-panel p-4">
-                <img 
-                  src="/lovable-uploads/17dd5bed-63f0-4fd3-a52b-a5c493b01dad.png"
-                  alt="Matrix Oracle Interface"
-                  className="w-full h-auto rounded-lg border border-matrix-green/30"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </main>
