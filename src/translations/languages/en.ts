@@ -6,8 +6,6 @@ export const en: Translations = {
     subtitle: "Enter a realm where artificial intelligence and human consciousness converge on the Sui blockchain.",
     initConnection: "Initialize Connection",
     projectOverview: "PROJECT OVERVIEW",
-    liveStatus: "System Status: Online",
-    online: "Online",
     error: "Error",
     errorFetchingData: "Error fetching data. Please try again later.",
     home: "Home"
@@ -56,6 +54,7 @@ export const en: Translations = {
     accessAgent: "Access AI Agent",
     aiAgentInterface: "Matrix AI Agent Interface",
     aiLaunchedTokens: "AI LAUNCHED TOKENS",
+    marketCap: "Market Cap",
     launchDate: "Launch Date"
   },
   network: {

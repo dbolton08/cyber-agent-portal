@@ -2,6 +2,10 @@ import React, { createContext, useContext, useState } from 'react';
 import { Language, Translations } from '../translations/types';
 import { en } from '../translations/languages/en';
 import { es } from '../translations/languages/es';
+import { fr } from '../translations/languages/fr';
+import { de } from '../translations/languages/de';
+import { it } from '../translations/languages/it';
+import { zh } from '../translations/languages/zh';
 
 interface LanguageContextType {
   language: Language;
@@ -20,6 +24,14 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
     switch (lang) {
       case 'es':
         return es;
+      case 'fr':
+        return fr;
+      case 'de':
+        return de;
+      case 'it':
+        return it;
+      case 'zh':
+        return zh;
       default:
         return defaultTranslations;
     }
