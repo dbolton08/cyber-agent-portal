@@ -32,7 +32,8 @@ export const es: Translations = {
     memoryAllocation: "Asignación de Memoria",
     storage: "Almacenamiento",
     activeProcesses: "Procesos Activos",
-    initConnection: "Iniciar Conexión"
+    initConnection: "Iniciar Conexión",
+    coreSystemsTitle: "Sistemas Centrales"
   },
   network: {
     networkTitle: "Estado de la Red",

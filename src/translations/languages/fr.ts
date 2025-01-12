@@ -32,7 +32,8 @@ export const fr: Translations = {
     memoryAllocation: "Allocation Mémoire",
     storage: "Stockage",
     activeProcesses: "Processus Actifs",
-    initConnection: "Initialiser la Connexion"
+    initConnection: "Initialiser la Connexion",
+    coreSystemsTitle: "Systèmes Principaux"
   },
   network: {
     networkTitle: "État du Réseau",

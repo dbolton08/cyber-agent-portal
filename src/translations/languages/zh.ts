@@ -32,7 +32,8 @@ export const zh: Translations = {
     memoryAllocation: "内存分配",
     storage: "存储",
     activeProcesses: "活动进程",
-    initConnection: "初始化连接"
+    initConnection: "初始化连接",
+    coreSystemsTitle: "核心系统"
   },
   network: {
     networkTitle: "网络状态",

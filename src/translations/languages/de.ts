@@ -32,7 +32,8 @@ export const de: Translations = {
     memoryAllocation: "Speicherzuweisung",
     storage: "Speicher",
     activeProcesses: "Aktive Prozesse",
-    initConnection: "Verbindung Initialisieren"
+    initConnection: "Verbindung Initialisieren",
+    coreSystemsTitle: "Kernsysteme"
   },
   network: {
     networkTitle: "Netzwerk-Status",
