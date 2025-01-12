@@ -33,6 +33,7 @@ export interface SystemTranslations {
   storage: string;
   activeProcesses: string;
   initConnection: string;
+  coreSystemsTitle: string;
 }
 
 export interface NetworkTranslations {
@@ -101,11 +102,4 @@ export interface Translations {
   console: ConsoleTranslations;
   agent: AgentTranslations;
   features: FeaturesTranslations;
-  error: string;
-  errorFetchingData: string;
-  totalStake: string;
-  epoch: string;
-  marketCap: string;
-  tps: string;
-  validators: string;
 }

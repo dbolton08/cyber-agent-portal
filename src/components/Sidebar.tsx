@@ -10,28 +10,28 @@ const Sidebar = () => {
       <nav className="space-y-6">
         <div className="space-y-2">
           <h2 className="text-matrix-green text-sm font-mono uppercase tracking-wider mb-4">
-            {translations.coreSystemsTitle}
+            {translations.system.coreSystemsTitle}
           </h2>
           
           <div className="space-y-4">
             <Link to="/agents" className="flex items-center space-x-3 text-matrix-green/80 hover:text-matrix-green transition-colors p-2 rounded hover:bg-matrix-green/10">
               <Brain className="w-5 h-5" />
-              <span className="font-mono">{translations.agents}</span>
+              <span className="font-mono">{translations.system.agents}</span>
             </Link>
             
             <Link to="/console" className="flex items-center space-x-3 text-matrix-green/80 hover:text-matrix-green transition-colors p-2 rounded hover:bg-matrix-green/10">
               <Terminal className="w-5 h-5" />
-              <span className="font-mono">{translations.console}</span>
+              <span className="font-mono">{translations.console.title}</span>
             </Link>
             
             <Link to="/systems" className="flex items-center space-x-3 text-matrix-green/80 hover:text-matrix-green transition-colors p-2 rounded hover:bg-matrix-green/10">
               <Database className="w-5 h-5" />
-              <span className="font-mono">{translations.systems}</span>
+              <span className="font-mono">{translations.system.systems}</span>
             </Link>
             
             <Link to="/network" className="flex items-center space-x-3 text-matrix-green/80 hover:text-matrix-green transition-colors p-2 rounded hover:bg-matrix-green/10">
               <Network className="w-5 h-5" />
-              <span className="font-mono">{translations.network}</span>
+              <span className="font-mono">{translations.network.networkTitle}</span>
             </Link>
           </div>
         </div>

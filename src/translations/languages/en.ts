@@ -1,6 +1,4 @@
-import { Translations } from '../types';
-
-export const en: Translations = {
+export const en = {
   common: {
     welcome: "MATRIX ORACLE",
     subtitle: "Enter a realm where artificial intelligence and human consciousness converge on the Sui blockchain.",
@@ -10,7 +8,7 @@ export const en: Translations = {
     errorFetchingData: "Error fetching data. Please try again later.",
     home: "Home",
     online: "Online",
-    liveStatus: "System Status: Online"
+    liveStatus: "Live Status"
   },
   system: {
     agents: "Agents",
@@ -32,10 +30,11 @@ export const en: Translations = {
     memoryAllocation: "Memory Allocation",
     storage: "Storage",
     activeProcesses: "Active Processes",
-    initConnection: "Initialize Connection"
+    initConnection: "Initialize Connection",
+    coreSystemsTitle: "Core Systems"
   },
   network: {
-    networkTitle: "Network Status",
+    networkTitle: "Network",
     networkActivity: "Network Activity",
     connectionStrength: "Connection Strength",
     activeNodes: "Active Nodes",
@@ -44,11 +43,11 @@ export const en: Translations = {
     networkLoad: "Network Load",
     recentEvents: "Recent Events",
     securityScanCompleted: "Security scan completed",
-    bandwidthOptimization: "Bandwidth optimization completed"
+    bandwidthOptimization: "Bandwidth optimization complete"
   },
   console: {
-    title: "Matrix Console",
-    description: "Advanced Command Interface",
+    title: "Console",
+    description: "Access the core systems through our advanced terminal interface",
     enterCommand: "Enter command",
     executeCommand: "Execute",
     availableCommands: "Available Commands",
@@ -60,7 +59,7 @@ export const en: Translations = {
     neuralNetDesc: "Decentralized machine learning network token",
     cyberCoreDesc: "AI governance token for decentralized systems",
     matrixAiAgent: "MATRIX AI AGENT",
-    agentDescription: "Interface with our advanced AI agent, trained on the principles of the Matrix. Unlock the secrets of the digital realm through natural conversation.",
+    agentDescription: "Interface with our advanced AI agent, trained on the principles of the Matrix",
     capabilities: "Capabilities",
     nlpCapability: "Natural Language Processing",
     marketAnalysis: "Market Analysis & Token Launch",
@@ -83,17 +82,10 @@ export const en: Translations = {
     smartContracts: "Smart Contracts",
     smartContractsDesc: "Advanced Move-based smart contracts",
     aiAssistant: "AI Assistant",
-    aiAssistantDesc: "Your personal guide in the digital realm",
+    aiAssistantDesc: "Intelligent assistance for all operations",
     quantumComputing: "Quantum Computing",
-    quantumDesc: "Harnessing the power of quantum algorithms",
+    quantumDesc: "Next-generation processing power",
     neuralInterface: "Neural Interface",
-    neuralInterfaceDesc: "Direct brain-computer interaction capabilities"
-  },
-  error: "Error",
-  errorFetchingData: "Error fetching data",
-  totalStake: "Total Stake",
-  epoch: "Epoch",
-  marketCap: "Market Cap",
-  tps: "TPS",
-  validators: "Validators"
+    neuralInterfaceDesc: "Direct neural connection capabilities"
+  }
 };
