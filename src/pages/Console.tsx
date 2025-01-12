@@ -192,7 +192,10 @@ const Console = () => {
             
             <div className="cyber-panel bg-cyber-dark/90 p-4 h-[60vh] overflow-y-auto font-mono text-sm space-y-1">
               {history.map((line, i) => (
-                <div key={i} className={`text-matrix-green ${line.startsWith('>') ? 'pl-2 border-l border-matrix-green' : ''}`}>
+                <div 
+                  key={i} 
+                  className={`text-matrix-green ${line && line.startsWith('>') ? 'pl-2 border-l border-matrix-green' : ''}`}
+                >
                   {line}
                 </div>
               ))}
