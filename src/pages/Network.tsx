@@ -93,7 +93,7 @@ const Network = () => {
       <main className="pt-24 pb-16 px-4 md:ml-0 md:mr-64 relative z-10">
         <div className="container mx-auto">
           <div className="cyber-panel p-8 mb-8">
-            <GlitchText text={translations.networkTitle} className="text-3xl mb-6" />
+            <GlitchText text={translations.network.networkTitle} className="text-3xl mb-6" />
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="cyber-panel p-4 aspect-square">
@@ -107,15 +107,15 @@ const Network = () => {
                 <div className="cyber-panel p-6">
                   <div className="flex items-center space-x-3 mb-4">
                     <Activity className="w-6 h-6 text-matrix-green" />
-                    <h3 className="text-xl cyber-text">{translations.networkActivity}</h3>
+                    <h3 className="text-xl cyber-text">{translations.network.networkActivity}</h3>
                   </div>
                   
                   <div className="space-y-4">
                     {[
-                      { icon: Wifi, label: translations.connectionStrength, value: "98%" },
-                      { icon: Globe, label: translations.activeNodes, value: "1,337" },
-                      { icon: Shield, label: translations.securityLevel, value: translations.maximum },
-                      { icon: Activity, label: translations.networkLoad, value: "45%" }
+                      { icon: Wifi, label: translations.network.connectionStrength, value: "98%" },
+                      { icon: Globe, label: translations.network.activeNodes, value: "1,337" },
+                      { icon: Shield, label: translations.network.securityLevel, value: translations.network.maximum },
+                      { icon: Activity, label: translations.network.networkLoad, value: "45%" }
                     ].map((stat) => (
                       <div key={stat.label} className="flex items-center justify-between p-3 cyber-panel">
                         <div className="flex items-center space-x-3">
@@ -129,12 +129,12 @@ const Network = () => {
                 </div>
 
                 <div className="cyber-panel p-6">
-                  <h3 className="text-xl cyber-text mb-4">{translations.recentEvents}</h3>
+                  <h3 className="text-xl cyber-text mb-4">{translations.network.recentEvents}</h3>
                   <div className="space-y-3">
                     {[
                       "New node connected: 0xF7A9",
-                      translations.securityScanCompleted,
-                      translations.bandwidthOptimization,
+                      translations.network.securityScanCompleted,
+                      translations.network.bandwidthOptimization,
                       "Protocol update: v2.1.4"
                     ].map((event, i) => (
                       <div 

@@ -63,7 +63,8 @@ export const en: Translations = {
     accessAgent: "Access AI Agent",
     aiAgentInterface: "Matrix AI Agent Interface",
     aiLaunchedTokens: "AI LAUNCHED TOKENS",
-    launchDate: "Launch Date"
+    launchDate: "Launch Date",
+    marketCap: "Market Cap"
   },
   features: {
     neuralProcessing: "Neural Processing",
@@ -75,7 +76,13 @@ export const en: Translations = {
     performance: "High Performance",
     performanceDesc: "Leveraging Sui's parallel execution engine",
     smartContracts: "Smart Contracts",
-    smartContractsDesc: "Advanced Move-based smart contracts"
+    smartContractsDesc: "Advanced Move-based smart contracts",
+    aiAssistant: "AI Assistant",
+    aiAssistantDesc: "Your personal guide in the digital realm",
+    quantumComputing: "Quantum Computing",
+    quantumDesc: "Harnessing the power of quantum algorithms",
+    neuralInterface: "Neural Interface",
+    neuralInterfaceDesc: "Direct brain-computer interaction capabilities"
   },
   error: "Error",
   errorFetchingData: "Error fetching data",
