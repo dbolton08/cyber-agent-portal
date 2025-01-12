@@ -30,6 +30,9 @@ export default {
           secondary: "#08F26E",
           dark: "#0D0208",
           panel: "rgba(13, 2, 8, 0.7)",
+          blue: "#0EA5E9",
+          magenta: "#D946EF",
+          purple: "#8B5CF6",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -93,6 +96,16 @@ export default {
           "0%, 100%": { transform: "translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg)" },
           "50%": { transform: "translate3d(0, -20px, 50px) rotate3d(0, 1, 0, 180deg)" },
         },
+        "hologram": {
+          "0%, 100%": { 
+            opacity: "1",
+            filter: "hue-rotate(0deg) brightness(1)",
+          },
+          "50%": { 
+            opacity: "0.8",
+            filter: "hue-rotate(180deg) brightness(1.2)",
+          },
+        },
       },
       animation: {
         "matrix-rain": "matrix-rain 20s linear infinite",
@@ -101,6 +114,7 @@ export default {
         "float": "float 6s ease-in-out infinite",
         "cyber-glitch": "cyber-glitch 0.5s ease-in-out infinite",
         "3d-float": "3d-float 10s ease-in-out infinite",
+        "hologram": "hologram 3s ease-in-out infinite",
       },
       backgroundImage: {
         "cyber-grid": "linear-gradient(0deg, transparent 24%, rgba(0, 255, 65, .05) 25%, rgba(0, 255, 65, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 65, .05) 75%, rgba(0, 255, 65, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 255, 65, .05) 25%, rgba(0, 255, 65, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 65, .05) 75%, rgba(0, 255, 65, .05) 76%, transparent 77%, transparent)",
