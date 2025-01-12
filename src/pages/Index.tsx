@@ -77,7 +77,7 @@ const Index = () => {
                   onClick={handleConnectSui}
                   className="cyber-button bg-matrix-green/10 hover:bg-matrix-green/20 inline-flex items-center justify-center gap-2"
                 >
-                  <span>Connect SUI Wallet Test</span>
+                  <span>Connect SUI Wallet</span>
                   <ExternalLink className="w-4 h-4" />
                 </button>
               </div>
