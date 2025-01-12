@@ -5,18 +5,18 @@ import GlitchText from "../components/GlitchText";
 import HexagonGrid from "../components/HexagonGrid";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Database, Home, Cpu, Network, Shield } from "lucide-react";
+import { Database, Shield, Cpu, Network, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 
-const fetchSuiStats = async () => {
-  const response = await fetch('https://api.sui.network/stats');
-  if (!response.ok) {
-    throw new Error('Failed to fetch Sui stats');
-  }
-  return response.json();
+// Dummy SUI Network Stats
+const dummyStats = {
+  totalTransactions: "2,456,789,123",
+  tps: "2,345",
+  activeValidators: "157",
+  totalStake: "458.7M SUI",
+  epochNumber: "491"
 };
 
 const Index = () => {
@@ -24,12 +24,6 @@ const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const { translations } = useLanguage();
   const { toast } = useToast();
-
-  const { data: suiStats, isLoading } = useQuery({
-    queryKey: ['suiStats'],
-    queryFn: fetchSuiStats,
-    refetchInterval: 30000 // Refresh every 30 seconds
-  });
 
   const handleConnectSui = () => {
     toast({
@@ -60,6 +54,7 @@ const Index = () => {
       
       <main className="relative z-10 pt-24 pb-16 px-4 md:px-8 transition-all duration-300 md:pr-72">
         <div className="container mx-auto max-w-6xl">
+          {/* Hero Section */}
           <div className="cyber-panel p-8 mb-8 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-cyber-dark/90 to-transparent z-10" />
             <div className="relative z-20">
@@ -67,23 +62,24 @@ const Index = () => {
                 SYSTEM ONLINE
               </div>
               <GlitchText 
-                text={translations.welcome}
+                text="MATRIX ORACLE"
                 className="block text-4xl md:text-6xl mb-6"
               />
               <p className="cyber-text text-lg md:text-xl mb-8 leading-relaxed max-w-3xl">
-                {translations.subtitle}
+                Enter a realm where artificial intelligence and human consciousness converge on the Sui blockchain.
               </p>
-              <div className="flex gap-4">
-                <Link to="/console" className="cyber-button group relative">
-                  <span className="relative z-10">{translations.initConnection}</span>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/console" className="cyber-button group relative inline-flex justify-center">
+                  <span className="relative z-10">Initialize Connection</span>
                   <div className="absolute inset-0 bg-matrix-green/20 group-hover:bg-matrix-green/30 transition-colors duration-300" />
                 </Link>
-                <Button 
+                <button 
                   onClick={handleConnectSui}
-                  className="cyber-button bg-matrix-green/10 hover:bg-matrix-green/20"
+                  className="cyber-button bg-matrix-green/10 hover:bg-matrix-green/20 inline-flex items-center justify-center gap-2"
                 >
-                  Connect SUI Wallet
-                </Button>
+                  <span>Connect SUI Wallet</span>
+                  <ExternalLink className="w-4 h-4" />
+                </button>
               </div>
             </div>
           </div>
@@ -91,15 +87,17 @@ const Index = () => {
           {/* SUI Network Stats */}
           <div className="cyber-panel p-8 mb-8">
             <GlitchText text="SUI NETWORK STATUS" className="text-2xl mb-6" />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {!isLoading && suiStats && [
-                { label: "Total Transactions", value: suiStats.totalTransactions?.toLocaleString() || "Loading..." },
-                { label: "TPS", value: suiStats.tps || "Loading..." },
-                { label: "Active Validators", value: suiStats.activeValidators || "Loading..." }
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+              {[
+                { label: "Total Transactions", value: dummyStats.totalTransactions },
+                { label: "TPS", value: dummyStats.tps },
+                { label: "Active Validators", value: dummyStats.activeValidators },
+                { label: "Total Stake", value: dummyStats.totalStake },
+                { label: "Epoch", value: dummyStats.epochNumber }
               ].map((stat, index) => (
                 <div key={index} className="cyber-panel p-4">
                   <h3 className="text-matrix-light text-sm mb-2">{stat.label}</h3>
-                  <p className="text-2xl font-mono animate-pulse">{stat.value}</p>
+                  <p className="text-xl font-mono animate-pulse">{stat.value}</p>
                 </div>
               ))}
             </div>
@@ -110,18 +108,18 @@ const Index = () => {
             {[
               {
                 icon: Database,
-                title: translations.neuralProcessing,
-                description: translations.neuralDesc
+                title: "Neural Processing",
+                description: "Advanced AI algorithms powered by quantum computing"
               },
               {
                 icon: Shield,
-                title: translations.secureProtocol,
-                description: translations.secureDesc
+                title: "Secure Protocol",
+                description: "Military-grade encryption for all operations"
               },
               {
                 icon: Network,
-                title: translations.performance,
-                description: translations.performanceDesc
+                title: "High Performance",
+                description: "Leveraging Sui's parallel execution engine for unprecedented throughput"
               }
             ].map((feature, i) => (
               <div key={feature.title} 
@@ -132,6 +130,34 @@ const Index = () => {
                 <p className="text-matrix-green/80">{feature.description}</p>
               </div>
             ))}
+          </div>
+
+          {/* Project Description */}
+          <div className="cyber-panel p-8 mb-8">
+            <GlitchText text="PROJECT OVERVIEW" className="text-2xl mb-6" />
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <p className="cyber-text leading-relaxed">
+                  Matrix Oracle represents the convergence of artificial intelligence and blockchain technology. 
+                  Our AI agents analyze market conditions, predict trends, and execute strategies with unprecedented precision.
+                </p>
+                <p className="cyber-text leading-relaxed">
+                  Built on the Sui blockchain, we leverage its high-performance infrastructure to deliver 
+                  real-time analysis and execution capabilities that were previously impossible.
+                </p>
+                <div className="flex items-center space-x-2 text-matrix-light">
+                  <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
+                  <span>Live System Status: Operational</span>
+                </div>
+              </div>
+              <div className="cyber-panel p-4">
+                <img 
+                  src="/lovable-uploads/17dd5bed-63f0-4fd3-a52b-a5c493b01dad.png"
+                  alt="Matrix Oracle Interface"
+                  className="w-full h-auto rounded-lg border border-matrix-green/30"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </main>
