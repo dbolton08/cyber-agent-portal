@@ -35,8 +35,8 @@ const SuiStats = () => {
   useEffect(() => {
     if (error) {
       toast({
-        title: translations.common.error,
-        description: translations.common.errorFetchingData,
+        title: translations.errors.error,
+        description: translations.errors.errorFetchingData,
         variant: "destructive"
       });
     }
@@ -54,23 +54,23 @@ const SuiStats = () => {
     <div className="cyber-panel p-6">
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
         <div className="cyber-panel p-4">
-          <h3 className="text-matrix-light text-sm mb-2">{translations.system.totalStake}</h3>
+          <h3 className="text-matrix-light text-sm mb-2">{translations.errors.totalStake}</h3>
           <p className="text-xl font-mono">{data.totalStake}</p>
         </div>
         <div className="cyber-panel p-4">
-          <h3 className="text-matrix-light text-sm mb-2">{translations.system.epoch}</h3>
+          <h3 className="text-matrix-light text-sm mb-2">{translations.errors.epoch}</h3>
           <p className="text-xl font-mono">{data.epoch}</p>
         </div>
         <div className="cyber-panel p-4">
-          <h3 className="text-matrix-light text-sm mb-2">{translations.system.marketCap}</h3>
+          <h3 className="text-matrix-light text-sm mb-2">{translations.errors.marketCap}</h3>
           <p className="text-xl font-mono">{data.marketCap}</p>
         </div>
         <div className="cyber-panel p-4">
-          <h3 className="text-matrix-light text-sm mb-2">{translations.system.tps}</h3>
+          <h3 className="text-matrix-light text-sm mb-2">{translations.errors.tps}</h3>
           <p className="text-xl font-mono">{data.tps}</p>
         </div>
         <div className="cyber-panel p-4">
-          <h3 className="text-matrix-light text-sm mb-2">{translations.system.validators}</h3>
+          <h3 className="text-matrix-light text-sm mb-2">{translations.errors.validators}</h3>
           <p className="text-xl font-mono">{data.validators}</p>
         </div>
       </div>

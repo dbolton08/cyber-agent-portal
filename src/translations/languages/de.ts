@@ -90,11 +90,13 @@ export const de: Translations = {
     neuralInterface: "Neurale Schnittstelle",
     neuralInterfaceDesc: "Direkte Gehirn-Computer-Interaktionsfähigkeiten"
   },
-  error: "Fehler",
-  errorFetchingData: "Fehler beim Abrufen der Daten",
-  totalStake: "Gesamt-Stake",
-  epoch: "Epoche",
-  marketCap: "Marktkapitalisierung",
-  tps: "TPS",
-  validators: "Validatoren"
+  errors: {
+    error: "Fehler",
+    errorFetchingData: "Fehler beim Abrufen der Daten",
+    totalStake: "Gesamt-Stake",
+    epoch: "Epoche",
+    marketCap: "Marktkapitalisierung",
+    tps: "TPS",
+    validators: "Validatoren"
+  }
 };

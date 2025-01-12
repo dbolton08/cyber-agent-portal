@@ -95,6 +95,16 @@ export interface FeaturesTranslations {
   neuralInterfaceDesc: string;
 }
 
+export interface ErrorTranslations {
+  error: string;
+  errorFetchingData: string;
+  totalStake: string;
+  epoch: string;
+  marketCap: string;
+  tps: string;
+  validators: string;
+}
+
 export interface Translations {
   common: CommonTranslations;
   system: SystemTranslations;
@@ -102,4 +112,5 @@ export interface Translations {
   console: ConsoleTranslations;
   agent: AgentTranslations;
   features: FeaturesTranslations;
+  errors: ErrorTranslations;
 }
