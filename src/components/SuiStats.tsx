@@ -14,7 +14,8 @@ interface SuiStats {
 
 const fetchSuiStats = async (): Promise<SuiStats> => {
   try {
-    const response = await fetch('https://api.coingecko.com/api/v3/coins/sui/market_chart?vs_currency=usd&days=1&interval=hourly');
+    // Using 7 days of data without specifying interval (will automatically get appropriate intervals)
+    const response = await fetch('https://api.coingecko.com/api/v3/coins/sui/market_chart?vs_currency=usd&days=7');
     const data = await response.json();
     
     // Format price data from CoinGecko
@@ -100,7 +101,10 @@ const SuiStats = () => {
           <LineChart data={data.priceHistory}>
             <XAxis 
               dataKey="timestamp"
-              tickFormatter={(timestamp) => new Date(timestamp).toLocaleTimeString()}
+              tickFormatter={(timestamp) => {
+                const date = new Date(timestamp);
+                return `${date.getMonth() + 1}/${date.getDate()}`;
+              }}
               stroke="#00FF41"
             />
             <YAxis 
