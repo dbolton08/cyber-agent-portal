@@ -32,8 +32,7 @@ export const zh: Translations = {
     memoryAllocation: "内存分配",
     storage: "存储",
     activeProcesses: "活动进程",
-    initConnection: "初始化连接",
-    coreSystemsTitle: "核心系统"
+    initConnection: "初始化连接"
   },
   network: {
     networkTitle: "网络状态",
@@ -90,13 +89,11 @@ export const zh: Translations = {
     neuralInterface: "神经接口",
     neuralInterfaceDesc: "直接的脑机交互能力"
   },
-  errors: {
-    error: "错误",
-    errorFetchingData: "获取数据错误",
-    totalStake: "总质押量",
-    epoch: "纪元",
-    marketCap: "市值",
-    tps: "TPS",
-    validators: "验证者"
-  }
+  error: "错误",
+  errorFetchingData: "获取数据错误",
+  totalStake: "总质押量",
+  epoch: "纪元",
+  marketCap: "市值",
+  tps: "TPS",
+  validators: "验证者"
 };

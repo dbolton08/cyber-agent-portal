@@ -35,32 +35,30 @@
     --radius: 0.5rem;
   }
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+  @keyframes glitch-1 {
+    0% { clip-path: inset(40% 0 61% 0); }
+    20% { clip-path: inset(92% 0 1% 0); }
+    40% { clip-path: inset(43% 0 1% 0); }
+    60% { clip-path: inset(25% 0 58% 0); }
+    80% { clip-path: inset(54% 0 7% 0); }
+    100% { clip-path: inset(58% 0 43% 0); }
   }
 
-  @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 65, 0.2); }
-    50% { box-shadow: 0 0 40px rgba(0, 255, 65, 0.4); }
+  @keyframes glitch-2 {
+    0% { clip-path: inset(24% 0 29% 0); }
+    20% { clip-path: inset(54% 0 21% 0); }
+    40% { clip-path: inset(73% 0 1% 0); }
+    60% { clip-path: inset(95% 0 5% 0); }
+    80% { clip-path: inset(14% 0 41% 0); }
+    100% { clip-path: inset(38% 0 63% 0); }
   }
 
-  @keyframes cyber-glitch {
-    0% { transform: skew(0deg); }
-    20% { transform: skew(10deg); }
-    40% { transform: skew(-10deg); }
-    60% { transform: skew(8deg); }
-    80% { transform: skew(-8deg); }
-    100% { transform: skew(0deg); }
+  .animate-glitch-1 {
+    animation: glitch-1 0.9s infinite linear alternate-reverse;
   }
 
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-
-  .transform-gpu {
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
+  .animate-glitch-2 {
+    animation: glitch-2 0.7s infinite linear alternate-reverse;
   }
 
   body {
@@ -69,15 +67,19 @@
     background-image: var(--cyber-grid);
   }
 
+  /* Enhanced Cyberpunk Utilities */
   .cyber-panel {
     @apply bg-cyber-panel backdrop-blur-sm border border-matrix-green/30 rounded-lg shadow-lg relative;
-    animation: pulse-glow 4s infinite;
-    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
   }
 
-  .cyber-panel:hover {
-    @apply border-matrix-green/50;
-    animation: cyber-glitch 0.2s ease-in-out;
+  .cyber-panel::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-matrix-green/5 to-transparent opacity-0 transition-opacity duration-500;
+  }
+
+  .cyber-panel:hover::before {
+    @apply opacity-100;
   }
 
   .cyber-text {
@@ -92,15 +94,6 @@
            overflow-hidden;
   }
 
-  .cyber-button::before {
-    content: '';
-    @apply absolute inset-0 bg-matrix-green/10 transform scale-x-0 origin-left transition-transform duration-300;
-  }
-
-  .cyber-button:hover::before {
-    @apply scale-x-100;
-  }
-
   .cyber-button::after {
     content: '';
     @apply absolute inset-0 bg-gradient-to-r from-matrix-green/20 to-transparent opacity-0;
@@ -111,16 +104,33 @@
     @apply opacity-100;
   }
 
-  /* Custom Scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
+  .matrix-glow {
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3),
+                0 0 20px rgba(0, 255, 65, 0.2),
+                0 0 30px rgba(0, 255, 65, 0.1);
   }
 
-  ::-webkit-scrollbar-track {
-    @apply bg-cyber-dark;
+  /* Matrix Rain Animation */
+  .matrix-rain-container {
+    @apply fixed inset-0 pointer-events-none overflow-hidden opacity-20;
   }
 
-  ::-webkit-scrollbar-thumb {
-    @apply bg-matrix-green/30 rounded hover:bg-matrix-green/50 transition-colors duration-300;
+  .matrix-rain {
+    @apply text-matrix-green font-mono text-xl;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
   }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cyber-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-matrix-green/30 rounded hover:bg-matrix-green/50 transition-colors duration-300;
 }

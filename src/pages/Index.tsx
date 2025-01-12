@@ -3,12 +3,11 @@ import Sidebar from "../components/Sidebar";
 import MatrixRain from "../components/MatrixRain";
 import GlitchText from "../components/GlitchText";
 import HexagonGrid from "../components/HexagonGrid";
-import ParticleEffect from "../components/ParticleEffect";
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Brain, Shield, Cpu, Terminal, Network, Database, Lock, Zap, Code } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { playSound } from "@/utils/soundEffects";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -18,23 +17,11 @@ const Index = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    setIsLoaded(true);
-    playSound('startup');
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-      const elements = document.querySelectorAll('.parallax');
-      elements.forEach((el) => {
-        const speed = (el as HTMLElement).dataset.speed || '0.5';
-        (el as HTMLElement).style.transform = `translateY(${scrollY * Number(speed)}px)`;
-      });
-    };
-    
+    const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
+    setIsLoaded(true);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrollY]);
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (containerRef.current) {
@@ -46,9 +33,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cyber-dark overflow-hidden perspective-1000">
+    <div className="min-h-screen bg-cyber-dark overflow-hidden">
       <MatrixRain />
-      <ParticleEffect />
       <HexagonGrid />
       
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none">
@@ -70,10 +56,10 @@ const Index = () => {
       >
         <div className="container mx-auto max-w-7xl">
           {/* Hero Section */}
-          <div className="cyber-panel p-8 mb-12 relative overflow-hidden transform-gpu hover:scale-[1.02] transition-all duration-500">
+          <div className="cyber-panel p-8 mb-12 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-cyber-dark/90 to-transparent z-10" />
             <div className="relative z-20 flex flex-col lg:flex-row items-center gap-8">
-              <div className="flex-1 text-left parallax" data-speed="0.3">
+              <div className="flex-1 text-left">
                 <div className="mb-2 text-matrix-light text-sm tracking-wider animate-pulse">
                   {translations.common.online}
                 </div>
@@ -87,9 +73,7 @@ const Index = () => {
                 <div className="flex flex-wrap gap-4">
                   <Link 
                     to="/console" 
-                    className="cyber-button group relative inline-flex justify-center transform hover:scale-105 transition-all duration-300"
-                    onMouseEnter={() => playSound('hover')}
-                    onClick={() => playSound('click')}
+                    className="cyber-button group relative inline-flex justify-center"
                   >
                     <span className="relative z-10 flex items-center">
                       <Terminal className="w-5 h-5 mr-2" />
@@ -98,9 +82,7 @@ const Index = () => {
                   </Link>
                   <Link 
                     to="/agents" 
-                    className="cyber-button group relative inline-flex justify-center transform hover:scale-105 transition-all duration-300"
-                    onMouseEnter={() => playSound('hover')}
-                    onClick={() => playSound('click')}
+                    className="cyber-button group relative inline-flex justify-center"
                   >
                     <span className="relative z-10 flex items-center">
                       <Network className="w-5 h-5 mr-2" />
@@ -109,12 +91,12 @@ const Index = () => {
                   </Link>
                 </div>
               </div>
-              <div className="flex-1 relative w-full max-w-md group parallax" data-speed="0.5">
+              <div className="flex-1 relative w-full max-w-md group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-matrix-green to-matrix-accent opacity-75 blur-lg group-hover:opacity-100 transition duration-1000"></div>
                 <img 
                   src="/lovable-uploads/737a1806-6fe2-4d45-a8e0-a7f359862ffb.png"
                   alt="Matrix Agent"
-                  className="relative rounded-lg w-full shadow-lg border border-matrix-green/30 transform hover:scale-105 transition-all duration-500 animate-float"
+                  className="relative rounded-lg w-full shadow-lg border border-matrix-green/30 transform hover:scale-105 transition-all duration-500"
                 />
               </div>
             </div>
@@ -141,22 +123,18 @@ const Index = () => {
             ].map((feature, i) => (
               <div 
                 key={feature.title}
-                className="cyber-panel p-6 group hover:scale-[1.02] transition-all duration-300 relative overflow-hidden bg-cyber-dark/50 cursor-pointer transform-gpu"
-                onMouseEnter={() => playSound('hover')}
-                style={{
-                  transform: `translateZ(${i * 20}px)`,
-                }}
+                className="cyber-panel p-6 group hover:scale-[1.02] transition-all duration-300 relative overflow-hidden bg-cyber-dark/50"
               >
                 <feature.icon className="w-12 h-12 mb-4 text-matrix-light animate-pulse" />
                 <h3 className="text-xl mb-2 cyber-text">{feature.title}</h3>
                 <p className="text-matrix-green/80">{feature.description}</p>
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-matrix-green/5 rounded-full blur-3xl transform translate-x-16 translate-y-16 group-hover:bg-matrix-green/10 transition-all duration-500" />
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-matrix-green/5 rounded-full blur-3xl transform translate-x-16 translate-y-16" />
               </div>
             ))}
           </div>
 
           {/* About Section */}
-          <div className="cyber-panel p-8 mb-12 relative overflow-hidden transform-gpu hover:scale-[1.01] transition-all duration-500">
+          <div className="cyber-panel p-8 mb-12 relative overflow-hidden">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h2 className="text-3xl mb-6 cyber-text">What is Matrix Oracle?</h2>

@@ -6,7 +6,6 @@ import GlitchText from "../components/GlitchText";
 import { Terminal, Cpu, Shield, Network, Database } from 'lucide-react';
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/components/ui/use-toast";
-import { playSound } from '@/utils/soundEffects';
 
 const Console = () => {
   const { translations } = useLanguage();
@@ -21,7 +20,6 @@ const Console = () => {
     security: Math.floor(Math.random() * 10) + 90
   });
   const consoleEndRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   const initialMessages = [
     "MATRIX ORACLE v1.0.0",
@@ -54,11 +52,11 @@ const Console = () => {
         setTimeout(typeNextMessage, Math.random() * 100 + 50);
       } else {
         setIsTyping(false);
-        inputRef.current?.focus();
       }
     };
     typeNextMessage();
 
+    // Update system status periodically
     const statusInterval = setInterval(() => {
       setSystemStatus(prev => ({
         cpu: Math.min(100, Math.max(60, prev.cpu + (Math.random() * 10 - 5))),
@@ -77,20 +75,6 @@ const Console = () => {
 
   const scrollToBottom = () => {
     consoleEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isTyping) return;
-    
-    playSound('click');
-    handleCommand(input.trim());
-    setInput('');
-    inputRef.current?.focus();
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
   };
 
   const handleCommand = (cmd: string) => {
@@ -147,6 +131,14 @@ const Console = () => {
     }
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    
+    handleCommand(input.trim());
+    setInput('');
+  };
+
   return (
     <div className="min-h-screen bg-cyber-grid overflow-hidden">
       <MatrixRain />
@@ -160,6 +152,7 @@ const Console = () => {
       
       <main className="pt-24 pb-16 px-4 md:ml-64 relative z-10">
         <div className="container mx-auto max-w-6xl">
+          {/* System Status Panel */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
             <div className="cyber-panel p-4 flex items-center space-x-3">
               <Cpu className="w-5 h-5 text-matrix-green animate-pulse" />
@@ -215,10 +208,9 @@ const Console = () => {
             <form onSubmit={handleSubmit} className="mt-4 flex items-center space-x-2">
               <span className="text-matrix-green animate-pulse">{'>'}</span>
               <input
-                ref={inputRef}
                 type="text"
                 value={input}
-                onChange={handleInputChange}
+                onChange={(e) => setInput(e.target.value)}
                 className="flex-1 bg-transparent border-none outline-none text-matrix-green font-mono focus:ring-1 focus:ring-matrix-green/30 rounded px-2 py-1"
                 placeholder={isTyping ? "" : "Enter command..."}
                 disabled={isTyping}

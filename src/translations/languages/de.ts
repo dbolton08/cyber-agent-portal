@@ -32,8 +32,7 @@ export const de: Translations = {
     memoryAllocation: "Speicherzuweisung",
     storage: "Speicher",
     activeProcesses: "Aktive Prozesse",
-    initConnection: "Verbindung Initialisieren",
-    coreSystemsTitle: "Kernsysteme"
+    initConnection: "Verbindung Initialisieren"
   },
   network: {
     networkTitle: "Netzwerk-Status",
@@ -90,13 +89,11 @@ export const de: Translations = {
     neuralInterface: "Neurale Schnittstelle",
     neuralInterfaceDesc: "Direkte Gehirn-Computer-Interaktionsfähigkeiten"
   },
-  errors: {
-    error: "Fehler",
-    errorFetchingData: "Fehler beim Abrufen der Daten",
-    totalStake: "Gesamt-Stake",
-    epoch: "Epoche",
-    marketCap: "Marktkapitalisierung",
-    tps: "TPS",
-    validators: "Validatoren"
-  }
+  error: "Fehler",
+  errorFetchingData: "Fehler beim Abrufen der Daten",
+  totalStake: "Gesamt-Stake",
+  epoch: "Epoche",
+  marketCap: "Marktkapitalisierung",
+  tps: "TPS",
+  validators: "Validatoren"
 };

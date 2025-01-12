@@ -10,7 +10,7 @@ export const en: Translations = {
     errorFetchingData: "Error fetching data. Please try again later.",
     home: "Home",
     online: "Online",
-    liveStatus: "Live Status"
+    liveStatus: "System Status: Online"
   },
   system: {
     agents: "Agents",
@@ -32,11 +32,10 @@ export const en: Translations = {
     memoryAllocation: "Memory Allocation",
     storage: "Storage",
     activeProcesses: "Active Processes",
-    initConnection: "Initialize Connection",
-    coreSystemsTitle: "Core Systems"
+    initConnection: "Initialize Connection"
   },
   network: {
-    networkTitle: "Network",
+    networkTitle: "Network Status",
     networkActivity: "Network Activity",
     connectionStrength: "Connection Strength",
     activeNodes: "Active Nodes",
@@ -45,11 +44,11 @@ export const en: Translations = {
     networkLoad: "Network Load",
     recentEvents: "Recent Events",
     securityScanCompleted: "Security scan completed",
-    bandwidthOptimization: "Bandwidth optimization complete"
+    bandwidthOptimization: "Bandwidth optimization completed"
   },
   console: {
-    title: "Console",
-    description: "Access the core systems through our advanced terminal interface",
+    title: "Matrix Console",
+    description: "Advanced Command Interface",
     enterCommand: "Enter command",
     executeCommand: "Execute",
     availableCommands: "Available Commands",
@@ -61,7 +60,7 @@ export const en: Translations = {
     neuralNetDesc: "Decentralized machine learning network token",
     cyberCoreDesc: "AI governance token for decentralized systems",
     matrixAiAgent: "MATRIX AI AGENT",
-    agentDescription: "Interface with our advanced AI agent, trained on the principles of the Matrix",
+    agentDescription: "Interface with our advanced AI agent, trained on the principles of the Matrix. Unlock the secrets of the digital realm through natural conversation.",
     capabilities: "Capabilities",
     nlpCapability: "Natural Language Processing",
     marketAnalysis: "Market Analysis & Token Launch",
@@ -84,19 +83,17 @@ export const en: Translations = {
     smartContracts: "Smart Contracts",
     smartContractsDesc: "Advanced Move-based smart contracts",
     aiAssistant: "AI Assistant",
-    aiAssistantDesc: "Intelligent assistance for all operations",
+    aiAssistantDesc: "Your personal guide in the digital realm",
     quantumComputing: "Quantum Computing",
-    quantumDesc: "Next-generation processing power",
+    quantumDesc: "Harnessing the power of quantum algorithms",
     neuralInterface: "Neural Interface",
-    neuralInterfaceDesc: "Direct neural connection capabilities"
+    neuralInterfaceDesc: "Direct brain-computer interaction capabilities"
   },
-  errors: {
-    error: "Error",
-    errorFetchingData: "Error fetching data",
-    totalStake: "Total Stake",
-    epoch: "Epoch",
-    marketCap: "Market Cap",
-    tps: "TPS",
-    validators: "Validators"
-  }
+  error: "Error",
+  errorFetchingData: "Error fetching data",
+  totalStake: "Total Stake",
+  epoch: "Epoch",
+  marketCap: "Market Cap",
+  tps: "TPS",
+  validators: "Validators"
 };

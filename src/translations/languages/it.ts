@@ -32,8 +32,7 @@ export const it: Translations = {
     memoryAllocation: "Allocazione Memoria",
     storage: "Archiviazione",
     activeProcesses: "Processi Attivi",
-    initConnection: "Inizializza Connessione",
-    coreSystemsTitle: "Sistemi Core"
+    initConnection: "Inizializza Connessione"
   },
   network: {
     networkTitle: "Stato della Rete",
@@ -90,13 +89,11 @@ export const it: Translations = {
     neuralInterface: "Interfaccia Neurale",
     neuralInterfaceDesc: "Capacità di interazione diretta cervello-computer"
   },
-  errors: {
-    error: "Errore",
-    errorFetchingData: "Errore nel recupero dei dati",
-    totalStake: "Stake Totale",
-    epoch: "Epoca",
-    marketCap: "Capitalizzazione di Mercato",
-    tps: "TPS",
-    validators: "Validatori"
-  }
+  error: "Errore",
+  errorFetchingData: "Errore nel recupero dei dati",
+  totalStake: "Stake Totale",
+  epoch: "Epoca",
+  marketCap: "Capitalizzazione di Mercato",
+  tps: "TPS",
+  validators: "Validatori"
 };
