@@ -203,7 +203,7 @@ const Console = () => {
             </div>
             
             <form onSubmit={handleSubmit} className="mt-4 flex items-center space-x-2">
-              <span className="text-matrix-green animate-pulse">></span>
+              <span className="text-matrix-green animate-pulse">{'>'}</span>
               <input
                 type="text"
                 value={input}
