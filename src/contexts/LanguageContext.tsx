@@ -1,22 +1,31 @@
 import React, { createContext, useContext, useState } from 'react';
-import { en } from '../translations/en';
-import { es } from '../translations/es';
+import { common as enCommon } from '../translations/common/en';
+import { common as esCommon } from '../translations/common/es';
+import { features as enFeatures } from '../translations/features/en';
+import { features as esFeatures } from '../translations/features/es';
 
-type Language = 'en' | 'es' | 'fr' | 'de' | 'it' | 'zh';
+type Language = 'en' | 'es';
+
+interface Translations {
+  common: typeof enCommon;
+  features: typeof enFeatures;
+}
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  translations: Record<string, string>;
+  translations: Translations;
 }
 
-const translations = {
-  en,
-  es,
-  fr: en,
-  de: en,
-  it: en,
-  zh: en
+const translations: Record<Language, Translations> = {
+  en: {
+    common: enCommon,
+    features: enFeatures
+  },
+  es: {
+    common: esCommon,
+    features: esFeatures
+  }
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
