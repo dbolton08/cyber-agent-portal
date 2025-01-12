@@ -27,7 +27,12 @@ export const fr: Translations = {
     validators: "Validateurs",
     decryptingData: "Décryptage des données de l'agent...",
     selectLanguage: "Sélectionner la Langue",
-    chooseLanguage: "Choisissez votre langue préférée"
+    chooseLanguage: "Choisissez votre langue préférée",
+    cpuUsage: "Utilisation CPU",
+    memoryAllocation: "Allocation Mémoire",
+    storage: "Stockage",
+    activeProcesses: "Processus Actifs",
+    initConnection: "Initialiser la Connexion"
   },
   network: {
     networkTitle: "État du Réseau",

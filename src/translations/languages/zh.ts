@@ -27,7 +27,12 @@ export const zh: Translations = {
     validators: "验证者",
     decryptingData: "正在解密代理数据...",
     selectLanguage: "选择语言",
-    chooseLanguage: "选择您偏好的语言"
+    chooseLanguage: "选择您偏好的语言",
+    cpuUsage: "CPU使用率",
+    memoryAllocation: "内存分配",
+    storage: "存储",
+    activeProcesses: "活动进程",
+    initConnection: "初始化连接"
   },
   network: {
     networkTitle: "网络状态",

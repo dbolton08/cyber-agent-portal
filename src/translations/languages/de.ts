@@ -27,7 +27,12 @@ export const de: Translations = {
     validators: "Validatoren",
     decryptingData: "Entschlüssele Agentendaten...",
     selectLanguage: "Sprache Auswählen",
-    chooseLanguage: "Wählen Sie Ihre bevorzugte Sprache"
+    chooseLanguage: "Wählen Sie Ihre bevorzugte Sprache",
+    cpuUsage: "CPU-Auslastung",
+    memoryAllocation: "Speicherzuweisung",
+    storage: "Speicher",
+    activeProcesses: "Aktive Prozesse",
+    initConnection: "Verbindung Initialisieren"
   },
   network: {
     networkTitle: "Netzwerk-Status",
@@ -86,7 +91,7 @@ export const de: Translations = {
   },
   error: "Fehler",
   errorFetchingData: "Fehler beim Abrufen der Daten",
-  totalStake: "Gesamteinsatz",
+  totalStake: "Gesamt-Stake",
   epoch: "Epoche",
   marketCap: "Marktkapitalisierung",
   tps: "TPS",
