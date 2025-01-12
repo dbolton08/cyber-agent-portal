@@ -50,11 +50,38 @@ export const de: Translations = {
     systemHealth: "Systemgesundheit",
     performance: "Leistung"
   },
-  error: "Fehler",
-  errorFetchingData: "Fehler beim Datenabruf",
-  totalStake: "Gesamt-Stake",
-  epoch: "Epoche",
-  marketCap: "Marktkapitalisierung",
-  tps: "TPS",
-  validators: "Validatoren"
+  agent: {
+    matrixAiDesc: "KI-gesteuertes DeFi-Protokoll, gestartet nach Analyse der Marktbedingungen",
+    neuralNetDesc: "Dezentrales Machine Learning Netzwerk Token",
+    cyberCoreDesc: "KI-Governance-Token für dezentrale Systeme",
+    matrixAiAgent: "MATRIX KI-AGENT",
+    agentDescription: "Interagieren Sie mit unserem fortschrittlichen KI-Agenten, trainiert nach den Prinzipien der Matrix. Erschließen Sie die Geheimnisse der digitalen Welt durch natürliche Konversation.",
+    capabilities: "Fähigkeiten",
+    nlpCapability: "Natürliche Sprachverarbeitung",
+    marketAnalysis: "Marktanalyse & Token-Launch",
+    problemSolving: "Fortgeschrittene Problemlösung",
+    accessAgent: "KI-Agent Zugriff",
+    aiAgentInterface: "Matrix KI-Agent Interface",
+    aiLaunchedTokens: "KI-GESTARTETE TOKENS",
+    launchDate: "Startdatum",
+    marketCap: "Marktkapitalisierung"
+  },
+  features: {
+    neuralProcessing: "Neurale Verarbeitung",
+    neuralDesc: "Fortschrittliche KI-Algorithmen mit Quantencomputing",
+    suiIntegration: "Sui Integration",
+    suiDesc: "Nahtlose Blockchain-Operationen im Sui Hochleistungsnetzwerk",
+    secureProtocol: "Sicheres Protokoll",
+    secureDesc: "Militärische Verschlüsselung für alle Operationen",
+    performance: "Hohe Leistung",
+    performanceDesc: "Nutzung der parallelen Ausführungsengine von Sui",
+    smartContracts: "Smart Contracts",
+    smartContractsDesc: "Fortschrittliche Move-basierte Smart Contracts",
+    aiAssistant: "KI-Assistent",
+    aiAssistantDesc: "Ihr persönlicher Führer durch die digitale Welt",
+    quantumComputing: "Quantencomputing",
+    quantumDesc: "Nutzung der Kraft von Quantenalgorithmen",
+    neuralInterface: "Neurale Schnittstelle",
+    neuralInterfaceDesc: "Direkte Gehirn-Computer-Interaktionsfähigkeiten"
+  }
 };

@@ -67,6 +67,7 @@ export interface AgentTranslations {
   aiAgentInterface: string;
   aiLaunchedTokens: string;
   launchDate: string;
+  marketCap: string;
 }
 
 export interface FeaturesTranslations {
@@ -80,6 +81,12 @@ export interface FeaturesTranslations {
   performanceDesc: string;
   smartContracts: string;
   smartContractsDesc: string;
+  aiAssistant: string;
+  aiAssistantDesc: string;
+  quantumComputing: string;
+  quantumDesc: string;
+  neuralInterface: string;
+  neuralInterfaceDesc: string;
 }
 
 export interface Translations {
