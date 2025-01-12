@@ -1,31 +1,48 @@
 import { Translations } from '../types';
 
 export const en: Translations = {
+  common: {
+    welcome: "MATRIX ORACLE",
+    subtitle: "Enter a realm where artificial intelligence and human consciousness converge on the Sui blockchain.",
+    initConnection: "Initialize Connection",
+    projectOverview: "PROJECT OVERVIEW",
+    liveStatus: "System Status: Online",
+    platformStatus: "Platform Status",
+    online: "Online",
+    error: "Error",
+    errorFetchingData: "Error fetching data. Please try again later.",
+    home: "Home",
+    connectWallet: "Connect SUI Wallet"
+  },
   system: {
     totalStake: "Total Stake",
     epoch: "Epoch",
     marketCap: "Market Cap",
     tps: "TPS (Peak)",
     validators: "Validators",
-    agents: "Agents",
-    console: "Console",
-    systems: "Systems",
-    network: "Network",
     decryptingData: "Decrypting agent data...",
     selectLanguage: "Select Language",
-    chooseLanguage: "Choose your preferred language",
-    platformStatus: "Platform Status",
-    systemStatus: "System Status",
-    online: "Online",
-    error: "Error",
-    errorFetchingData: "Error fetching data. Please try again later."
+    chooseLanguage: "Choose your preferred language"
+  },
+  features: {
+    neuralProcessing: "Neural Processing",
+    neuralDesc: "Advanced AI algorithms powered by quantum computing",
+    secureProtocol: "Secure Protocol",
+    secureDesc: "Military-grade encryption for all operations",
+    performance: "High Performance",
+    performanceDesc: "Leveraging Sui's parallel execution engine",
+    aiAssistant: "AI Assistant",
+    aiAssistantDesc: "Your personal guide through the digital realm",
+    quantumComputing: "Quantum Computing",
+    quantumDesc: "Harnessing the power of quantum algorithms",
+    neuralInterface: "Neural Interface",
+    neuralInterfaceDesc: "Direct brain-computer interaction capabilities"
   },
   agent: {
     matrixAiDesc: "AI-powered DeFi protocol launched after analyzing market conditions",
     neuralNetDesc: "Decentralized machine learning network token",
     cyberCoreDesc: "AI governance token for decentralized systems",
     matrixAiAgent: "MATRIX AI AGENT",
-    home: "Home",
     agentDescription: "Interface with our advanced AI agent, trained on the principles of the Matrix",
     capabilities: "Capabilities",
     nlpCapability: "Natural Language Processing",

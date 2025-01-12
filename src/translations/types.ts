@@ -1,23 +1,43 @@
 export type Language = 'en' | 'es' | 'fr' | 'de' | 'it' | 'zh';
 
+export interface CommonTranslations {
+  welcome: string;
+  subtitle: string;
+  initConnection: string;
+  projectOverview: string;
+  liveStatus: string;
+  platformStatus: string;
+  online: string;
+  error: string;
+  errorFetchingData: string;
+  home: string;
+  connectWallet: string;
+}
+
 export interface SystemTranslations {
   totalStake: string;
   epoch: string;
   marketCap: string;
   tps: string;
   validators: string;
-  agents: string;
-  console: string;
-  systems: string;
-  network: string;
   decryptingData: string;
   selectLanguage: string;
   chooseLanguage: string;
-  platformStatus: string;
-  systemStatus: string;
-  online: string;
-  error: string;
-  errorFetchingData: string;
+}
+
+export interface FeaturesTranslations {
+  neuralProcessing: string;
+  neuralDesc: string;
+  secureProtocol: string;
+  secureDesc: string;
+  performance: string;
+  performanceDesc: string;
+  aiAssistant: string;
+  aiAssistantDesc: string;
+  quantumComputing: string;
+  quantumDesc: string;
+  neuralInterface: string;
+  neuralInterfaceDesc: string;
 }
 
 export interface AgentTranslations {
@@ -25,7 +45,6 @@ export interface AgentTranslations {
   neuralNetDesc: string;
   cyberCoreDesc: string;
   matrixAiAgent: string;
-  home: string;
   agentDescription: string;
   capabilities: string;
   nlpCapability: string;
@@ -51,7 +70,9 @@ export interface NetworkTranslations {
 }
 
 export interface Translations {
+  common: CommonTranslations;
   system: SystemTranslations;
+  features: FeaturesTranslations;
   agent: AgentTranslations;
   network: NetworkTranslations;
 }
