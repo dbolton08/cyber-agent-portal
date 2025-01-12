@@ -53,11 +53,42 @@ export interface ConsoleTranslations {
   performance: string;
 }
 
+export interface AgentTranslations {
+  matrixAiDesc: string;
+  neuralNetDesc: string;
+  cyberCoreDesc: string;
+  matrixAiAgent: string;
+  agentDescription: string;
+  capabilities: string;
+  nlpCapability: string;
+  marketAnalysis: string;
+  problemSolving: string;
+  accessAgent: string;
+  aiAgentInterface: string;
+  aiLaunchedTokens: string;
+  launchDate: string;
+}
+
+export interface FeaturesTranslations {
+  neuralProcessing: string;
+  neuralDesc: string;
+  suiIntegration: string;
+  suiDesc: string;
+  secureProtocol: string;
+  secureDesc: string;
+  performance: string;
+  performanceDesc: string;
+  smartContracts: string;
+  smartContractsDesc: string;
+}
+
 export interface Translations {
   common: CommonTranslations;
   system: SystemTranslations;
   network: NetworkTranslations;
   console: ConsoleTranslations;
+  agent: AgentTranslations;
+  features: FeaturesTranslations;
   error: string;
   errorFetchingData: string;
   totalStake: string;
