@@ -74,6 +74,10 @@ const Console = () => {
     scrollToBottom();
   }, [history]);
 
+  const scrollToBottom = () => {
+    consoleEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isTyping) return;
