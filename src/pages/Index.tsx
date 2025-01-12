@@ -10,15 +10,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 
-// Dummy SUI Network Stats
-const dummyStats = {
-  totalTransactions: "2,456,789,123",
-  tps: "2,345",
-  activeValidators: "157",
-  totalStake: "458.7M SUI",
-  epochNumber: "491"
-};
-
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -62,46 +53,23 @@ const Index = () => {
                 SYSTEM ONLINE
               </div>
               <GlitchText 
-                text="MATRIX ORACLE"
+                text={translations.welcome}
                 className="block text-4xl md:text-6xl mb-6"
               />
               <p className="cyber-text text-lg md:text-xl mb-8 leading-relaxed max-w-3xl">
-                Enter a realm where artificial intelligence and human consciousness converge on the Sui blockchain.
+                {translations.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/console" className="cyber-button group relative inline-flex justify-center">
-                  <span className="relative z-10">Initialize Connection</span>
+                  <span className="relative z-10">{translations.initConnection}</span>
                   <div className="absolute inset-0 bg-matrix-green/20 group-hover:bg-matrix-green/30 transition-colors duration-300" />
                 </Link>
-                <button 
-                  onClick={handleConnectSui}
-                  className="cyber-button bg-matrix-green/10 hover:bg-matrix-green/20 inline-flex items-center justify-center gap-2"
-                >
-                  <span>Connect SUI Wallet</span>
-                  <ExternalLink className="w-4 h-4" />
-                </button>
               </div>
             </div>
           </div>
 
           {/* SUI Network Stats */}
-          <div className="cyber-panel p-8 mb-8">
-            <GlitchText text="SUI NETWORK STATUS" className="text-2xl mb-6" />
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-              {[
-                { label: "Total Transactions", value: dummyStats.totalTransactions },
-                { label: "TPS", value: dummyStats.tps },
-                { label: "Active Validators", value: dummyStats.activeValidators },
-                { label: "Total Stake", value: dummyStats.totalStake },
-                { label: "Epoch", value: dummyStats.epochNumber }
-              ].map((stat, index) => (
-                <div key={index} className="cyber-panel p-4">
-                  <h3 className="text-matrix-light text-sm mb-2">{stat.label}</h3>
-                  <p className="text-xl font-mono animate-pulse">{stat.value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <SuiStats />
 
           {/* Feature Grid */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">

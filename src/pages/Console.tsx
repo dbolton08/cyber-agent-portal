@@ -9,7 +9,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Console = () => {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState<string[]>([
-    'Matrix Console v1.0.0',
+    'Matrix Oracle v1.0.0',
     'Type "help" for available commands'
   ]);
   const consoleEndRef = useRef<HTMLDivElement>(null);
@@ -24,15 +24,45 @@ const Console = () => {
 
   const handleCommand = (cmd: string) => {
     const commands: Record<string, () => string> = {
-      help: () => 'Available commands: help, clear, status, scan, connect, disconnect',
+      help: () => `Available commands:
+help - Show this help message
+clear - Clear console
+status - Check system status
+scan - Scan network for nodes
+connect - Establish secure connection
+disconnect - Terminate connection
+analyze - Analyze market conditions
+deploy - Deploy smart contract
+mine - Mine SUI blocks
+hack - Attempt system breach (simulated)
+upgrade - Upgrade neural network
+train - Train AI model
+market - Show market statistics
+network - Display network metrics
+ping - Test network latency
+encrypt - Encrypt message
+decrypt - Decrypt message
+benchmark - Run system benchmark`,
       clear: () => {
-        setHistory(['Matrix Console v1.0.0']);
+        setHistory(['Matrix Oracle v1.0.0']);
         return '';
       },
-      status: () => 'All systems operational. Connection secure.',
-      scan: () => 'Scanning network...\nFound 42 active nodes\nNo threats detected',
-      connect: () => 'Establishing secure connection...\nConnection established',
-      disconnect: () => 'Disconnecting...\nConnection terminated'
+      status: () => 'All systems operational. Neural network at 98.7% efficiency.',
+      scan: () => 'Scanning network...\nFound 42 active nodes\nDetected 3 potential threats\nNetwork security: OPTIMAL',
+      connect: () => 'Establishing secure connection...\nInitializing quantum encryption...\nConnection established',
+      disconnect: () => 'Disconnecting...\nSaving neural state...\nConnection terminated',
+      analyze: () => 'Analyzing market conditions...\nBullish patterns detected\nAI confidence: 89.4%\nRecommended action: ACCUMULATE',
+      deploy: () => 'Deploying smart contract...\nCompiling Move code...\nVerifying bytecode...\nContract deployed successfully',
+      mine: () => 'Mining SUI blocks...\nHash rate: 42.5 TH/s\nBlock found! Height: 1,337,420',
+      hack: () => 'UNAUTHORIZED ACCESS ATTEMPT DETECTED\nInitiating countermeasures...\nThreat neutralized',
+      upgrade: () => 'Upgrading neural network...\nOptimizing synaptic connections...\nUpgrade complete. Performance increased by 15%',
+      train: () => 'Training AI model...\nEpoch 1/10: Loss 0.0342\nEpoch 10/10: Loss 0.0021\nTraining complete',
+      market: () => 'Market Analysis:\nSUI Price: $1.23\n24h Volume: $142M\nMarket Sentiment: Bullish',
+      network: () => 'Network Status:\nNodes: 1,337\nTPS: 2,345\nLatency: 42ms',
+      ping: () => 'Pinging network nodes...\nAverage latency: 42ms\nPacket loss: 0%',
+      encrypt: () => 'Message encrypted using quantum-resistant algorithm\nKey exchange successful',
+      decrypt: () => 'Decryption successful\nMessage integrity verified\nQuantum state preserved',
+      benchmark: () => 'Running benchmark...\nCPU Score: 9,842\nMemory Score: 7,654\nNetwork Score: 8,921'
     };
 
     const newOutput = commands[cmd.toLowerCase()]?.() || `Command not found: ${cmd}`;

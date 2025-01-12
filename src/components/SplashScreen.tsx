@@ -14,9 +14,11 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
 
   const languages = [
     { code: 'en', label: 'English' },
-    { code: 'es', label: 'Español' },
-    { code: 'zh', label: '中文' },
-    { code: 'ja', label: '日本語' },
+    { code: 'es', label: 'Spanish' },
+    { code: 'fr', label: 'French' },
+    { code: 'de', label: 'German' },
+    { code: 'it', label: 'Italian' },
+    { code: 'zh', label: 'Chinese' }
   ] as const;
 
   const handleLanguageSelect = async (lang: typeof languages[number]['code']) => {
@@ -50,11 +52,11 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
     <div className="fixed inset-0 bg-cyber-dark flex flex-col items-center justify-center z-50">
       <div className="space-y-12 text-center">
         <GlitchText 
-          text="Welcome to the Matrix"
+          text="Select Language"
           className="text-4xl md:text-6xl mb-2"
         />
         <div className="text-matrix-light text-sm mb-8">
-          Select your language to continue
+          Choose your preferred language
         </div>
         <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
           {languages.map((lang) => (
