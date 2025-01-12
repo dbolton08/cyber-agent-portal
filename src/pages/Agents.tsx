@@ -3,11 +3,39 @@ import TopNav from "../components/TopNav";
 import Sidebar from "../components/Sidebar";
 import MatrixRain from "../components/MatrixRain";
 import GlitchText from "../components/GlitchText";
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, TrendingUp, Coins, Home } from 'lucide-react';
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 
 const Agents = () => {
   const { translations } = useLanguage();
+
+  const launchedTokens = [
+    {
+      name: "MatrixAI",
+      symbol: "MTXAI",
+      launchDate: "2024-02-15",
+      marketCap: "$45.2M",
+      growth: "+324%",
+      description: "AI-powered DeFi protocol launched after analyzing market conditions"
+    },
+    {
+      name: "NeuralNet",
+      symbol: "NNET",
+      launchDate: "2024-01-30",
+      marketCap: "$28.7M",
+      growth: "+156%",
+      description: "Decentralized machine learning network token"
+    },
+    {
+      name: "CyberCore",
+      symbol: "CYBR",
+      launchDate: "2024-03-01",
+      marketCap: "$15.3M",
+      growth: "+89%",
+      description: "AI governance token for decentralized systems"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-cyber-grid overflow-hidden">
@@ -22,8 +50,15 @@ const Agents = () => {
       
       <main className="pt-24 pb-16 px-4 md:ml-0 md:mr-64 relative z-10">
         <div className="container mx-auto">
+          <div className="flex justify-between items-center mb-8">
+            <GlitchText text="MATRIX AI AGENT" className="text-3xl" />
+            <Link to="/" className="cyber-button flex items-center gap-2">
+              <Home className="w-4 h-4" />
+              <span>Home</span>
+            </Link>
+          </div>
+
           <div className="cyber-panel p-8 mb-8">
-            <GlitchText text="MATRIX AI AGENT" className="text-3xl mb-6" />
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <p className="cyber-text text-lg">
@@ -39,7 +74,7 @@ const Agents = () => {
                     </li>
                     <li className="flex items-center space-x-3">
                       <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
-                      <span>Blockchain Integration</span>
+                      <span>Market Analysis & Token Launch</span>
                     </li>
                     <li className="flex items-center space-x-3">
                       <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
@@ -64,6 +99,40 @@ const Agents = () => {
                   className="w-full h-auto rounded-lg border border-matrix-green/30"
                 />
               </div>
+            </div>
+          </div>
+
+          <div className="cyber-panel p-8">
+            <GlitchText text="AI LAUNCHED TOKENS" className="text-2xl mb-6" />
+            <div className="grid md:grid-cols-3 gap-6">
+              {launchedTokens.map((token) => (
+                <div key={token.name} className="cyber-panel p-6 space-y-4">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="text-xl cyber-text">{token.name}</h3>
+                      <p className="text-matrix-green/60">{token.symbol}</p>
+                    </div>
+                    <div className="flex items-center text-matrix-light">
+                      <TrendingUp className="w-4 h-4 mr-1" />
+                      <span>{token.growth}</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-matrix-green/60">Market Cap</span>
+                      <span className="font-mono">{token.marketCap}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-matrix-green/60">Launch Date</span>
+                      <span className="font-mono">{token.launchDate}</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-matrix-green/80">{token.description}</p>
+                  <div className="h-1 bg-matrix-green/20 rounded overflow-hidden">
+                    <div className="h-full bg-matrix-green animate-pulse" style={{ width: token.growth.replace('+', '').replace('%', '') + '%' }} />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

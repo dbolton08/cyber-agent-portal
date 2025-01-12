@@ -5,13 +5,39 @@ import GlitchText from "../components/GlitchText";
 import HexagonGrid from "../components/HexagonGrid";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Database, Brain, Cpu, Network, Shield } from "lucide-react";
+import { Database, Home, Cpu, Network, Shield } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useQuery } from "@tanstack/react-query";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
+
+const fetchSuiStats = async () => {
+  const response = await fetch('https://api.sui.network/stats');
+  if (!response.ok) {
+    throw new Error('Failed to fetch Sui stats');
+  }
+  return response.json();
+};
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const { translations } = useLanguage();
+  const { toast } = useToast();
+
+  const { data: suiStats, isLoading } = useQuery({
+    queryKey: ['suiStats'],
+    queryFn: fetchSuiStats,
+    refetchInterval: 30000 // Refresh every 30 seconds
+  });
+
+  const handleConnectSui = () => {
+    toast({
+      title: "SUI Integration Coming Soon",
+      description: "The SUI wallet integration will be available in the next update.",
+      duration: 3000,
+    });
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -34,14 +60,8 @@ const Index = () => {
       
       <main className="relative z-10 pt-24 pb-16 px-4 md:px-8 transition-all duration-300 md:pr-72">
         <div className="container mx-auto max-w-6xl">
-          {/* Hero Section */}
           <div className="cyber-panel p-8 mb-8 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-cyber-dark/90 to-transparent z-10" />
-            <img 
-              src="/lovable-uploads/24412fd5-2e8b-4dd9-8497-3a6cb8a279a6.png"
-              alt="Matrix Oracle"
-              className="absolute inset-0 w-full h-full object-cover object-center opacity-40 group-hover:scale-105 transition-transform duration-1000"
-            />
             <div className="relative z-20">
               <div className="mb-2 text-matrix-light text-sm tracking-wider animate-pulse">
                 SYSTEM ONLINE
@@ -53,46 +73,35 @@ const Index = () => {
               <p className="cyber-text text-lg md:text-xl mb-8 leading-relaxed max-w-3xl">
                 {translations.subtitle}
               </p>
-              <Link to="/console" className="cyber-button group relative">
-                <span className="relative z-10">{translations.initConnection}</span>
-                <div className="absolute inset-0 bg-matrix-green/20 group-hover:bg-matrix-green/30 transition-colors duration-300" />
-              </Link>
+              <div className="flex gap-4">
+                <Link to="/console" className="cyber-button group relative">
+                  <span className="relative z-10">{translations.initConnection}</span>
+                  <div className="absolute inset-0 bg-matrix-green/20 group-hover:bg-matrix-green/30 transition-colors duration-300" />
+                </Link>
+                <Button 
+                  onClick={handleConnectSui}
+                  className="cyber-button bg-matrix-green/10 hover:bg-matrix-green/20"
+                >
+                  Connect SUI Wallet
+                </Button>
+              </div>
             </div>
           </div>
 
-          {/* AI Agent Section */}
-          <div className="cyber-panel p-8 mb-12">
-            <h2 className="text-2xl mb-6 cyber-text">Matrix AI Agent</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <p className="text-matrix-green/80">
-                  Interact with our advanced AI agent, trained on the principles of the Matrix.
-                </p>
-                <iframe
-                  src="https://matrixoracle.xyz/oldindex.html"
-                  className="w-full h-[600px] border border-matrix-green/30 rounded-lg bg-cyber-dark"
-                  title="Matrix Oracle AI Agent"
-                />
-              </div>
-              <div className="space-y-8">
-                <div className="cyber-panel p-6">
-                  <h3 className="text-xl mb-4 cyber-text">Agent Capabilities</h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-center space-x-3">
-                      <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
-                      <span>Natural Language Processing</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
-                      <span>Blockchain Integration</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
-                      <span>Advanced Problem Solving</span>
-                    </li>
-                  </ul>
+          {/* SUI Network Stats */}
+          <div className="cyber-panel p-8 mb-8">
+            <GlitchText text="SUI NETWORK STATUS" className="text-2xl mb-6" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {!isLoading && suiStats && [
+                { label: "Total Transactions", value: suiStats.totalTransactions?.toLocaleString() || "Loading..." },
+                { label: "TPS", value: suiStats.tps || "Loading..." },
+                { label: "Active Validators", value: suiStats.activeValidators || "Loading..." }
+              ].map((stat, index) => (
+                <div key={index} className="cyber-panel p-4">
+                  <h3 className="text-matrix-light text-sm mb-2">{stat.label}</h3>
+                  <p className="text-2xl font-mono animate-pulse">{stat.value}</p>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -100,19 +109,19 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
               {
-                icon: Brain,
+                icon: Database,
                 title: translations.neuralProcessing,
                 description: translations.neuralDesc
-              },
-              {
-                icon: Database,
-                title: translations.suiIntegration,
-                description: translations.suiDesc
               },
               {
                 icon: Shield,
                 title: translations.secureProtocol,
                 description: translations.secureDesc
+              },
+              {
+                icon: Network,
+                title: translations.performance,
+                description: translations.performanceDesc
               }
             ].map((feature, i) => (
               <div key={feature.title} 
@@ -123,87 +132,6 @@ const Index = () => {
                 <p className="text-matrix-green/80">{feature.description}</p>
               </div>
             ))}
-          </div>
-
-          <div className="cyber-panel p-8 mb-12 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-matrix-green/5 to-transparent opacity-50" />
-            <div className="relative z-10">
-              <GlitchText 
-                text="SUI BLOCKCHAIN INTEGRATION"
-                className="block text-2xl md:text-3xl mb-6"
-              />
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  <h3 className="text-xl cyber-text">{translations.performance}</h3>
-                  <p className="text-matrix-green/80">
-                    {translations.performanceDesc}
-                  </p>
-                  <div className="h-2 bg-cyber-dark rounded overflow-hidden">
-                    <div className="h-full bg-matrix-light w-[95%] rounded-r animate-pulse" />
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-xl cyber-text">{translations.smartContracts}</h3>
-                  <p className="text-matrix-green/80">
-                    {translations.smartContractsDesc}
-                  </p>
-                  <div className="h-2 bg-cyber-dark rounded overflow-hidden">
-                    <div className="h-full bg-matrix-light w-[90%] rounded-r animate-pulse" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Live Network Stats */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="cyber-panel p-6">
-              <h2 className="cyber-text text-xl mb-6 flex items-center">
-                <Network className="mr-2" />
-                Network Statistics
-              </h2>
-              <div className="space-y-6">
-                {[
-                  { name: "Network Uptime", value: 99.99 },
-                  { name: "Transaction Speed", value: 95 },
-                  { name: "Node Distribution", value: 88 }
-                ].map((stat) => (
-                  <div key={stat.name} className="space-y-2">
-                    <div className="flex justify-between cyber-text text-sm">
-                      <span>{stat.name}</span>
-                      <span>{stat.value}%</span>
-                    </div>
-                    <div className="h-2 bg-cyber-dark rounded overflow-hidden">
-                      <div 
-                        className="h-full bg-matrix-green rounded-r transition-all duration-1000 animate-pulse"
-                        style={{ width: `${stat.value}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="cyber-panel p-6">
-              <h2 className="cyber-text text-xl mb-6 flex items-center">
-                <Cpu className="mr-2" />
-                System Performance
-              </h2>
-              <div className="space-y-4">
-                {[
-                  { name: "AI Processing", value: "1.2 PetaFLOPS" },
-                  { name: "Active Nodes", value: "1,337" },
-                  { name: "Response Time", value: "< 100ms" }
-                ].map((metric) => (
-                  <div key={metric.name} className="flex items-center space-x-3 cyber-text">
-                    <div className="h-3 w-3 rounded-full bg-matrix-green animate-cyber-pulse" />
-                    <span>{metric.name}</span>
-                    <div className="flex-1 h-[1px] bg-matrix-green/30" />
-                    <span className="text-matrix-light">{metric.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </main>
