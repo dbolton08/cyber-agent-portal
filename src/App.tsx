@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Index from "./pages/Index";
 import Console from "./pages/Console";
+import Agents from "./pages/Agents";
+import Systems from "./pages/Systems";
+import Network from "./pages/Network";
 import SplashScreen from "./components/SplashScreen";
 import { LanguageProvider } from "./contexts/LanguageContext";
 
@@ -27,6 +30,9 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/console" element={<Console />} />
+                <Route path="/agents" element={<Agents />} />
+                <Route path="/systems" element={<Systems />} />
+                <Route path="/network" element={<Network />} />
               </Routes>
             </BrowserRouter>
           )}

@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Menu, X, User, Terminal, Database, Network } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const menuItems = [
-    { icon: User, label: "Agents", href: "#agents" },
-    { icon: Terminal, label: "Console", href: "#console" },
-    { icon: Database, label: "Systems", href: "#systems" },
-    { icon: Network, label: "Network", href: "#network" },
+    { icon: User, label: "Agents", href: "/agents" },
+    { icon: Terminal, label: "Console", href: "/console" },
+    { icon: Database, label: "Systems", href: "/systems" },
+    { icon: Network, label: "Network", href: "/network" },
   ];
 
   return (
@@ -29,14 +31,17 @@ const Sidebar = () => {
           <div className="cyber-text text-lg font-bold mb-8">Platform Status</div>
           
           {menuItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
-              className="flex items-center space-x-3 cyber-button w-full mb-4"
+              to={item.href}
+              className={`flex items-center space-x-3 cyber-button w-full mb-4 ${
+                location.pathname === item.href ? 'bg-matrix-green/20' : ''
+              }`}
+              onClick={() => setIsOpen(false)}
             >
               <item.icon className="h-5 w-5" />
               <span>{item.label}</span>
-            </a>
+            </Link>
           ))}
 
           <div className="mt-8 p-4 cyber-panel">
