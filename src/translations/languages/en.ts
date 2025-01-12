@@ -27,7 +27,12 @@ export const en: Translations = {
     validators: "Validators",
     decryptingData: "Decrypting agent data...",
     selectLanguage: "Select Language",
-    chooseLanguage: "Choose your preferred language"
+    chooseLanguage: "Choose your preferred language",
+    cpuUsage: "CPU Usage",
+    memoryAllocation: "Memory Allocation",
+    storage: "Storage",
+    activeProcesses: "Active Processes",
+    initConnection: "Initialize Connection"
   },
   network: {
     networkTitle: "Network Status",

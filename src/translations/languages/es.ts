@@ -27,7 +27,12 @@ export const es: Translations = {
     validators: "Validadores",
     decryptingData: "Descifrando datos del agente...",
     selectLanguage: "Seleccionar Idioma",
-    chooseLanguage: "Elige tu idioma preferido"
+    chooseLanguage: "Elige tu idioma preferido",
+    cpuUsage: "Uso de CPU",
+    memoryAllocation: "Asignación de Memoria",
+    storage: "Almacenamiento",
+    activeProcesses: "Procesos Activos",
+    initConnection: "Iniciar Conexión"
   },
   network: {
     networkTitle: "Estado de la Red",
@@ -88,7 +93,7 @@ export const es: Translations = {
   errorFetchingData: "Error al obtener datos",
   totalStake: "Stake Total",
   epoch: "Época",
-  marketCap: "Capitalización de Mercado",
+  marketCap: "Cap. de Mercado",
   tps: "TPS",
   validators: "Validadores"
 };

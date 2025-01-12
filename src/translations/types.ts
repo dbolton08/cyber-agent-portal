@@ -28,6 +28,11 @@ export interface SystemTranslations {
   decryptingData: string;
   selectLanguage: string;
   chooseLanguage: string;
+  cpuUsage: string;
+  memoryAllocation: string;
+  storage: string;
+  activeProcesses: string;
+  initConnection: string;
 }
 
 export interface NetworkTranslations {
