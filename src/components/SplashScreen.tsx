@@ -8,17 +8,17 @@ interface SplashScreenProps {
 }
 
 const SplashScreen = ({ onComplete }: SplashScreenProps) => {
-  const { setLanguage } = useLanguage();
+  const { setLanguage, translations } = useLanguage();
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
 
   const languages = [
     { code: 'en', label: 'English' },
-    { code: 'es', label: 'Spanish' },
-    { code: 'fr', label: 'French' },
-    { code: 'de', label: 'German' },
-    { code: 'it', label: 'Italian' },
-    { code: 'zh', label: 'Chinese' }
+    { code: 'es', label: 'Español' },
+    { code: 'fr', label: 'Français' },
+    { code: 'de', label: 'Deutsch' },
+    { code: 'it', label: 'Italiano' },
+    { code: 'zh', label: '中文' }
   ] as const;
 
   const handleLanguageSelect = async (lang: typeof languages[number]['code']) => {
@@ -41,7 +41,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         <div className="w-64 space-y-4">
           <Progress value={progress} className="h-1 bg-matrix-dark" />
           <p className="text-matrix-green text-sm font-mono animate-pulse">
-            Decrypting agent data...
+            {translations.decryptingData}
           </p>
         </div>
       </div>
@@ -52,11 +52,11 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
     <div className="fixed inset-0 bg-cyber-dark flex flex-col items-center justify-center z-50">
       <div className="space-y-12 text-center">
         <GlitchText 
-          text="Select Language"
+          text={translations.selectLanguage}
           className="text-4xl md:text-6xl mb-2"
         />
         <div className="text-matrix-light text-sm mb-8">
-          Choose your preferred language
+          {translations.chooseLanguage}
         </div>
         <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
           {languages.map((lang) => (

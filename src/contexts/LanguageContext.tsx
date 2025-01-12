@@ -28,7 +28,18 @@ const translations = {
     epoch: "Epoch",
     marketCap: "Market Cap",
     tps: "TPS (Peak)",
-    validators: "Validators"
+    validators: "Validators",
+    selectLanguage: "Select Language",
+    chooseLanguage: "Choose your preferred language",
+    decryptingData: "Decrypting agent data...",
+    agents: "Agents",
+    console: "Console",
+    systems: "Systems",
+    network: "Network",
+    platformStatus: "Platform Status",
+    systemStatus: "System Status",
+    online: "Online",
+    projectOverview: "PROJECT OVERVIEW"
   },
   es: {
     welcome: "ORÁCULO MATRIX",
@@ -49,7 +60,18 @@ const translations = {
     epoch: "Época",
     marketCap: "Cap. de Mercado",
     tps: "TPS (Pico)",
-    validators: "Validadores"
+    validators: "Validadores",
+    selectLanguage: "Seleccionar Idioma",
+    chooseLanguage: "Elige tu idioma preferido",
+    decryptingData: "Descifrando datos del agente...",
+    agents: "Agentes",
+    console: "Consola",
+    systems: "Sistemas",
+    network: "Red",
+    platformStatus: "Estado de la Plataforma",
+    systemStatus: "Estado del Sistema",
+    online: "En línea",
+    projectOverview: "DESCRIPCIÓN DEL PROYECTO"
   },
   fr: {
     welcome: "ORACLE MATRIX",
@@ -70,7 +92,18 @@ const translations = {
     epoch: "Époque",
     marketCap: "Cap. Marché",
     tps: "TPS (Pic)",
-    validators: "Validateurs"
+    validators: "Validateurs",
+    selectLanguage: "Choisir la Langue",
+    chooseLanguage: "Choisissez votre langue préférée",
+    decryptingData: "Décryptage des données de l'agent...",
+    agents: "Agents",
+    console: "Console",
+    systems: "Systèmes",
+    network: "Réseau",
+    platformStatus: "État de la Plateforme",
+    systemStatus: "État du Système",
+    online: "En ligne",
+    projectOverview: "APERÇU DU PROJET"
   },
   de: {
     welcome: "MATRIX ORAKEL",
@@ -91,7 +124,18 @@ const translations = {
     epoch: "Epoche",
     marketCap: "Marktkapitalisierung",
     tps: "TPS (Spitze)",
-    validators: "Validatoren"
+    validators: "Validatoren",
+    selectLanguage: "Sprache Wählen",
+    chooseLanguage: "Wählen Sie Ihre bevorzugte Sprache",
+    decryptingData: "Entschlüssele Agentendaten...",
+    agents: "Agenten",
+    console: "Konsole",
+    systems: "Systeme",
+    network: "Netzwerk",
+    platformStatus: "Plattformstatus",
+    systemStatus: "Systemstatus",
+    online: "Online",
+    projectOverview: "PROJEKTÜBERSICHT"
   },
   it: {
     welcome: "ORACOLO MATRIX",
@@ -112,7 +156,18 @@ const translations = {
     epoch: "Epoca",
     marketCap: "Cap. di Mercato",
     tps: "TPS (Picco)",
-    validators: "Validatori"
+    validators: "Validatori",
+    selectLanguage: "Seleziona Lingua",
+    chooseLanguage: "Scegli la tua lingua preferita",
+    decryptingData: "Decrittazione dati agente...",
+    agents: "Agenti",
+    console: "Console",
+    systems: "Sistemi",
+    network: "Rete",
+    platformStatus: "Stato Piattaforma",
+    systemStatus: "Stato Sistema",
+    online: "Online",
+    projectOverview: "PANORAMICA PROGETTO"
   },
   zh: {
     welcome: "矩阵神谕",
@@ -133,7 +188,18 @@ const translations = {
     epoch: "周期",
     marketCap: "市值",
     tps: "TPS (峰值)",
-    validators: "验证者"
+    validators: "验证者",
+    selectLanguage: "选择语言",
+    chooseLanguage: "选择您的首选语言",
+    decryptingData: "正在解密代理数据...",
+    agents: "代理",
+    console: "控制台",
+    systems: "系统",
+    network: "网络",
+    platformStatus: "平台状态",
+    systemStatus: "系统状态",
+    online: "在线",
+    projectOverview: "项目概述"
   }
 };
 
