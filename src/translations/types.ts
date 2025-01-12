@@ -58,6 +58,7 @@ export interface AgentTranslations {
   accessAgent: string;
   aiAgentInterface: string;
   aiLaunchedTokens: string;
+  marketCap: string;
   launchDate: string;
 }
 

@@ -39,37 +39,43 @@ const Index = () => {
       icon: Brain,
       title: translations.features.neuralProcessing,
       description: translations.features.neuralDesc,
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      image: "/placeholder_images/photo-1485827404703-89b55fcc595e.jpg"
     },
     {
       icon: Shield,
       title: translations.features.secureProtocol,
       description: translations.features.secureDesc,
-      color: "from-green-500 to-emerald-500"
+      color: "from-green-500 to-emerald-500",
+      image: "/placeholder_images/photo-1526374965328-7f61d4dc18c5.jpg"
     },
     {
       icon: Cpu,
       title: translations.features.performance,
       description: translations.features.performanceDesc,
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      image: "/placeholder_images/photo-1518770660439-4636190af475.jpg"
     },
     {
       icon: Sparkles,
       title: translations.features.aiAssistant,
       description: translations.features.aiAssistantDesc,
-      color: "from-yellow-500 to-orange-500"
+      color: "from-yellow-500 to-orange-500",
+      image: "/placeholder_images/photo-1518770660439-4636190af475.jpg"
     },
     {
       icon: Network,
       title: translations.features.quantumComputing,
       description: translations.features.quantumDesc,
-      color: "from-red-500 to-rose-500"
+      color: "from-red-500 to-rose-500",
+      image: "/placeholder_images/photo-1518770660439-4636190af475.jpg"
     },
     {
       icon: Database,
       title: translations.features.neuralInterface,
       description: translations.features.neuralInterfaceDesc,
-      color: "from-indigo-500 to-violet-500"
+      color: "from-indigo-500 to-violet-500",
+      image: "/placeholder_images/photo-1518770660439-4636190af475.jpg"
     }
   ];
 
@@ -122,6 +128,13 @@ const Index = () => {
                 </Link>
               </div>
             </div>
+            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-96 h-96 opacity-30">
+              <img 
+                src="/placeholder_images/photo-1487058792275-0ad4aaf24ca7.jpg"
+                alt="AI Visualization"
+                className="w-full h-full object-cover rounded-full animate-slow-spin"
+              />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -138,7 +151,15 @@ const Index = () => {
                 <feature.icon className="w-12 h-12 mb-4 text-matrix-light relative z-10" />
                 <h3 className="text-xl mb-2 cyber-text relative z-10">{feature.title}</h3>
                 <p className="text-matrix-green/80 relative z-10">{feature.description}</p>
-                <div className="absolute -bottom-2 -right-2 w-24 h-24 bg-gradient-to-br opacity-20 blur-xl transition-opacity duration-300 group-hover:opacity-30" />
+                {feature.image && (
+                  <div className="absolute -bottom-10 -right-10 w-32 h-32 opacity-20 rotate-12">
+                    <img 
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                )}
               </div>
             ))}
           </div>
