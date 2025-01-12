@@ -3,6 +3,7 @@ import { Progress } from "@/components/ui/progress";
 import GlitchText from "./GlitchText";
 import { useLanguage } from '@/contexts/LanguageContext';
 import MatrixRain from './MatrixRain';
+import { playSound } from '@/utils/soundEffects';
 
 interface SplashScreenProps {
   onComplete: () => void;
@@ -23,6 +24,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
   ] as const;
 
   const handleLanguageSelect = async (lang: typeof languages[number]['code']) => {
+    playSound('click');
     setLanguage(lang);
     setLoading(true);
     
@@ -69,9 +71,9 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         <div className="space-y-12 text-center">
           <GlitchText 
             text={translations.system.selectLanguage}
-            className="text-4xl md:text-6xl mb-2"
+            className="text-4xl md:text-6xl mb-2 text-matrix-green"
           />
-          <div className="text-matrix-light text-sm mb-8">
+          <div className="text-matrix-light text-lg mb-8">
             {translations.system.chooseLanguage}
           </div>
           <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
@@ -79,7 +81,8 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
               <button
                 key={lang.code}
                 onClick={() => handleLanguageSelect(lang.code)}
-                className="cyber-button w-full"
+                onMouseEnter={() => playSound('hover')}
+                className="cyber-button w-full border border-matrix-green text-matrix-green hover:bg-matrix-green/20 transition-all duration-300 py-3 px-6 rounded-md backdrop-blur-sm"
               >
                 {lang.label}
               </button>
