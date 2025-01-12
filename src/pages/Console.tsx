@@ -201,7 +201,7 @@ const Console = () => {
               {history.map((line, i) => (
                 <div 
                   key={i} 
-                  className={`text-matrix-green ${line.startsWith('>') ? 'pl-2 border-l border-matrix-green' : ''}`}
+                  className={`text-matrix-green ${line && line.startsWith('>') ? 'pl-2 border-l border-matrix-green' : ''}`}
                 >
                   {line}
                 </div>
