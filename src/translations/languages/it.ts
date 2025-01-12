@@ -8,7 +8,9 @@ export const it: Translations = {
     projectOverview: "PANORAMICA PROGETTO",
     error: "Errore",
     errorFetchingData: "Errore nel recupero dei dati. Riprova più tardi.",
-    home: "Home"
+    home: "Home",
+    online: "Online",
+    liveStatus: "Stato del Sistema: Online"
   },
   system: {
     agents: "Agenti",
@@ -27,36 +29,6 @@ export const it: Translations = {
     selectLanguage: "Seleziona Lingua",
     chooseLanguage: "Scegli la tua lingua preferita"
   },
-  features: {
-    neuralProcessing: "Elaborazione Neurale",
-    neuralDesc: "Algoritmi IA avanzati alimentati dal computing quantistico",
-    secureProtocol: "Protocollo Sicuro",
-    secureDesc: "Crittografia militare per tutte le operazioni",
-    performance: "Alta Prestazione",
-    performanceDesc: "Sfruttamento del motore di esecuzione parallela di Sui",
-    aiAssistant: "Assistente IA",
-    aiAssistantDesc: "La tua guida personale nel regno digitale",
-    quantumComputing: "Computing Quantistico",
-    quantumDesc: "Sfruttamento della potenza degli algoritmi quantistici",
-    neuralInterface: "Interfaccia Neurale",
-    neuralInterfaceDesc: "Capacità di interazione diretta cervello-computer"
-  },
-  agent: {
-    matrixAiDesc: "Protocollo DeFi basato su IA lanciato dopo l'analisi delle condizioni di mercato",
-    neuralNetDesc: "Token di rete di apprendimento automatico decentralizzato",
-    cyberCoreDesc: "Token di governance IA per sistemi decentralizzati",
-    matrixAiAgent: "AGENTE IA MATRIX",
-    agentDescription: "Interfaccia con il nostro agente IA avanzato, addestrato sui principi di Matrix",
-    capabilities: "Capacità",
-    nlpCapability: "Elaborazione del Linguaggio Naturale",
-    marketAnalysis: "Analisi di Mercato & Lancio Token",
-    problemSolving: "Risoluzione Avanzata dei Problemi",
-    accessAgent: "Accedi all'Agente IA",
-    aiAgentInterface: "Interfaccia Agente IA Matrix",
-    aiLaunchedTokens: "TOKEN LANCIATI DA IA",
-    marketCap: "Cap. di Mercato",
-    launchDate: "Data di Lancio"
-  },
   network: {
     networkTitle: "Stato della Rete",
     networkActivity: "Attività di Rete",
@@ -68,5 +40,21 @@ export const it: Translations = {
     recentEvents: "Eventi Recenti",
     securityScanCompleted: "Scansione di sicurezza completata",
     bandwidthOptimization: "Ottimizzazione della larghezza di banda completata"
-  }
+  },
+  console: {
+    title: "Console Matrix",
+    description: "Interfaccia di comando avanzata",
+    enterCommand: "Inserisci comando",
+    executeCommand: "Esegui",
+    availableCommands: "Comandi disponibili",
+    systemHealth: "Salute del sistema",
+    performance: "Prestazioni"
+  },
+  error: "Errore",
+  errorFetchingData: "Errore nel recupero dei dati",
+  totalStake: "Stake Totale",
+  epoch: "Epoca",
+  marketCap: "Capitalizzazione",
+  tps: "TPS",
+  validators: "Validatori"
 };

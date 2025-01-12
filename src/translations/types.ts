@@ -8,6 +8,8 @@ export interface CommonTranslations {
   error: string;
   errorFetchingData: string;
   home: string;
+  online: string;
+  liveStatus: string;
 }
 
 export interface SystemTranslations {
@@ -41,42 +43,26 @@ export interface NetworkTranslations {
   bandwidthOptimization: string;
 }
 
-export interface AgentTranslations {
-  matrixAiDesc: string;
-  neuralNetDesc: string;
-  cyberCoreDesc: string;
-  matrixAiAgent: string;
-  agentDescription: string;
-  capabilities: string;
-  nlpCapability: string;
-  marketAnalysis: string;
-  problemSolving: string;
-  accessAgent: string;
-  aiAgentInterface: string;
-  aiLaunchedTokens: string;
-  marketCap: string;
-  launchDate: string;
-}
-
-export interface FeaturesTranslations {
-  neuralProcessing: string;
-  neuralDesc: string;
-  secureProtocol: string;
-  secureDesc: string;
+export interface ConsoleTranslations {
+  title: string;
+  description: string;
+  enterCommand: string;
+  executeCommand: string;
+  availableCommands: string;
+  systemHealth: string;
   performance: string;
-  performanceDesc: string;
-  aiAssistant: string;
-  aiAssistantDesc: string;
-  quantumComputing: string;
-  quantumDesc: string;
-  neuralInterface: string;
-  neuralInterfaceDesc: string;
 }
 
 export interface Translations {
   common: CommonTranslations;
   system: SystemTranslations;
-  features: FeaturesTranslations;
-  agent: AgentTranslations;
   network: NetworkTranslations;
+  console: ConsoleTranslations;
+  error: string;
+  errorFetchingData: string;
+  totalStake: string;
+  epoch: string;
+  marketCap: string;
+  tps: string;
+  validators: string;
 }

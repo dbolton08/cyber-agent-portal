@@ -8,7 +8,9 @@ export const de: Translations = {
     projectOverview: "PROJEKTÜBERSICHT",
     error: "Fehler",
     errorFetchingData: "Fehler beim Abrufen der Daten. Bitte versuchen Sie es später erneut.",
-    home: "Start"
+    home: "Start",
+    online: "Online",
+    liveStatus: "Systemstatus: Online"
   },
   system: {
     agents: "Agenten",
@@ -27,36 +29,6 @@ export const de: Translations = {
     selectLanguage: "Sprache Auswählen",
     chooseLanguage: "Wählen Sie Ihre bevorzugte Sprache"
   },
-  features: {
-    neuralProcessing: "Neurale Verarbeitung",
-    neuralDesc: "Fortschrittliche KI-Algorithmen mit Quantencomputing",
-    secureProtocol: "Sicheres Protokoll",
-    secureDesc: "Militärische Verschlüsselung für alle Operationen",
-    performance: "Hohe Leistung",
-    performanceDesc: "Nutzung der parallelen Ausführungsengine von Sui",
-    aiAssistant: "KI-Assistent",
-    aiAssistantDesc: "Ihr persönlicher Führer durch die digitale Welt",
-    quantumComputing: "Quantencomputing",
-    quantumDesc: "Nutzung der Kraft von Quantenalgorithmen",
-    neuralInterface: "Neurale Schnittstelle",
-    neuralInterfaceDesc: "Direkte Gehirn-Computer-Interaktionsfähigkeiten"
-  },
-  agent: {
-    matrixAiDesc: "KI-gesteuertes DeFi-Protokoll nach Analyse der Marktbedingungen",
-    neuralNetDesc: "Token für dezentrales maschinelles Lernen",
-    cyberCoreDesc: "KI-Governance-Token für dezentrale Systeme",
-    matrixAiAgent: "MATRIX KI-AGENT",
-    agentDescription: "Interagieren Sie mit unserem fortschrittlichen KI-Agenten, trainiert nach Matrix-Prinzipien",
-    capabilities: "Fähigkeiten",
-    nlpCapability: "Natürliche Sprachverarbeitung",
-    marketAnalysis: "Marktanalyse & Token-Launch",
-    problemSolving: "Fortgeschrittene Problemlösung",
-    accessAgent: "KI-Agent Zugriff",
-    aiAgentInterface: "Matrix KI-Agent Schnittstelle",
-    aiLaunchedTokens: "KI-GESTARTETE TOKENS",
-    marketCap: "Marktkapitalisierung",
-    launchDate: "Startdatum"
-  },
   network: {
     networkTitle: "Netzwerk-Status",
     networkActivity: "Netzwerkaktivität",
@@ -68,5 +40,21 @@ export const de: Translations = {
     recentEvents: "Aktuelle Ereignisse",
     securityScanCompleted: "Sicherheitsscan abgeschlossen",
     bandwidthOptimization: "Bandbreitenoptimierung abgeschlossen"
-  }
+  },
+  console: {
+    title: "Matrix Konsole",
+    description: "Erweiterte Befehlsschnittstelle",
+    enterCommand: "Befehl eingeben",
+    executeCommand: "Ausführen",
+    availableCommands: "Verfügbare Befehle",
+    systemHealth: "Systemgesundheit",
+    performance: "Leistung"
+  },
+  error: "Fehler",
+  errorFetchingData: "Fehler beim Datenabruf",
+  totalStake: "Gesamt-Stake",
+  epoch: "Epoche",
+  marketCap: "Marktkapitalisierung",
+  tps: "TPS",
+  validators: "Validatoren"
 };
