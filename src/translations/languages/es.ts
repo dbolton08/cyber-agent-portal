@@ -63,7 +63,8 @@ export const es: Translations = {
     accessAgent: "Acceder al Agente de IA",
     aiAgentInterface: "Interfaz del Agente de IA Matrix",
     aiLaunchedTokens: "TOKENS LANZADOS POR IA",
-    launchDate: "Fecha de Lanzamiento"
+    launchDate: "Fecha de Lanzamiento",
+    marketCap: "Capitalización de Mercado"
   },
   features: {
     neuralProcessing: "Procesamiento Neural",
@@ -75,13 +76,19 @@ export const es: Translations = {
     performance: "Alto Rendimiento",
     performanceDesc: "Aprovechando el motor de ejecución paralela de Sui",
     smartContracts: "Contratos Inteligentes",
-    smartContractsDesc: "Contratos inteligentes avanzados basados en Move"
+    smartContractsDesc: "Contratos inteligentes avanzados basados en Move",
+    aiAssistant: "Asistente de IA",
+    aiAssistantDesc: "Tu guía personal en el reino digital",
+    quantumComputing: "Computación Cuántica",
+    quantumDesc: "Aprovechando el poder de los algoritmos cuánticos",
+    neuralInterface: "Interfaz Neural",
+    neuralInterfaceDesc: "Capacidades directas de interacción cerebro-computadora"
   },
   error: "Error",
   errorFetchingData: "Error al obtener datos",
   totalStake: "Stake Total",
   epoch: "Época",
-  marketCap: "Cap. de Mercado",
+  marketCap: "Capitalización de Mercado",
   tps: "TPS",
   validators: "Validadores"
 };

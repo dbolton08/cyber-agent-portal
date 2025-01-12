@@ -83,5 +83,12 @@ export const de: Translations = {
     quantumDesc: "Nutzung der Kraft von Quantenalgorithmen",
     neuralInterface: "Neurale Schnittstelle",
     neuralInterfaceDesc: "Direkte Gehirn-Computer-Interaktionsfähigkeiten"
-  }
+  },
+  error: "Fehler",
+  errorFetchingData: "Fehler beim Abrufen der Daten",
+  totalStake: "Gesamteinsatz",
+  epoch: "Epoche",
+  marketCap: "Marktkapitalisierung",
+  tps: "TPS",
+  validators: "Validatoren"
 };

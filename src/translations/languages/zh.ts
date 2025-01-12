@@ -83,5 +83,12 @@ export const zh: Translations = {
     quantumDesc: "利用量子算法的力量",
     neuralInterface: "神经接口",
     neuralInterfaceDesc: "直接的脑机交互能力"
-  }
+  },
+  error: "错误",
+  errorFetchingData: "获取数据错误",
+  totalStake: "总质押量",
+  epoch: "纪元",
+  marketCap: "市值",
+  tps: "TPS",
+  validators: "验证者"
 };

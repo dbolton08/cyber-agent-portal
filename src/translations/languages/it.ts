@@ -64,7 +64,7 @@ export const it: Translations = {
     aiAgentInterface: "Interfaccia Agente IA Matrix",
     aiLaunchedTokens: "TOKEN LANCIATI DA IA",
     launchDate: "Data di Lancio",
-    marketCap: "Capitalizzazione"
+    marketCap: "Capitalizzazione di Mercato"
   },
   features: {
     neuralProcessing: "Elaborazione Neurale",
@@ -83,5 +83,12 @@ export const it: Translations = {
     quantumDesc: "Sfruttamento della potenza degli algoritmi quantistici",
     neuralInterface: "Interfaccia Neurale",
     neuralInterfaceDesc: "Capacità di interazione diretta cervello-computer"
-  }
+  },
+  error: "Errore",
+  errorFetchingData: "Errore nel recupero dei dati",
+  totalStake: "Stake Totale",
+  epoch: "Epoca",
+  marketCap: "Capitalizzazione di Mercato",
+  tps: "TPS",
+  validators: "Validatori"
 };
