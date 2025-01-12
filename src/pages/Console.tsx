@@ -20,6 +20,7 @@ const Console = () => {
     security: Math.floor(Math.random() * 10) + 90
   });
   const consoleEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const initialMessages = [
     "MATRIX ORACLE v1.0.0",
@@ -73,8 +74,19 @@ const Console = () => {
     scrollToBottom();
   }, [history]);
 
-  const scrollToBottom = () => {
-    consoleEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isTyping) return;
+    
+    handleCommand(input.trim());
+    setInput('');
+    
+    // Focus back on input after command
+    inputRef.current?.focus();
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
   };
 
   const handleCommand = (cmd: string) => {
@@ -129,14 +141,6 @@ const Console = () => {
     if (newOutput) {
       setHistory(prev => [...prev, `> ${cmd}`, ...newOutput.split('\n')]);
     }
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-    
-    handleCommand(input.trim());
-    setInput('');
   };
 
   return (
@@ -208,9 +212,10 @@ const Console = () => {
             <form onSubmit={handleSubmit} className="mt-4 flex items-center space-x-2">
               <span className="text-matrix-green animate-pulse">{'>'}</span>
               <input
+                ref={inputRef}
                 type="text"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={handleInputChange}
                 className="flex-1 bg-transparent border-none outline-none text-matrix-green font-mono focus:ring-1 focus:ring-matrix-green/30 rounded px-2 py-1"
                 placeholder={isTyping ? "" : "Enter command..."}
                 disabled={isTyping}
