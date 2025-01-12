@@ -3,7 +3,7 @@ import TopNav from "../components/TopNav";
 import Sidebar from "../components/Sidebar";
 import MatrixRain from "../components/MatrixRain";
 import GlitchText from "../components/GlitchText";
-import { Server, Cpu, Chip, HardDrive } from 'lucide-react';
+import { Server, Cpu, CircuitBoard, HardDrive } from 'lucide-react';
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Systems = () => {
@@ -35,7 +35,7 @@ const Systems = () => {
                 
                 {[
                   { name: "CPU Usage", value: 42, icon: Cpu },
-                  { name: "Memory Allocation", value: 78, icon: Chip },
+                  { name: "Memory Allocation", value: 78, icon: CircuitBoard },
                   { name: "Storage", value: 65, icon: HardDrive }
                 ].map((metric) => (
                   <div key={metric.name} className="space-y-2">
