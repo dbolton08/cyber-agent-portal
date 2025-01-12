@@ -19,32 +19,37 @@ const Sidebar = () => {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-20 right-4 z-50 cyber-button md:hidden"
+        className="fixed top-4 right-4 z-50 cyber-button p-2 md:hidden"
+        aria-label="Toggle menu"
       >
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
 
       <div
-        className={`fixed top-16 right-0 h-full w-64 cyber-panel transform transition-transform duration-300 ease-in-out z-40 ${
+        className={`fixed top-16 right-0 h-[calc(100vh-4rem)] w-64 cyber-panel transform transition-transform duration-300 ease-in-out z-40 ${
           isOpen ? "translate-x-0" : "translate-x-full md:translate-x-0"
         }`}
       >
-        <div className="p-4 space-y-6">
-          <div className="cyber-text text-lg font-bold mb-8">{translations.system.platformStatus}</div>
+        <div className="p-4 space-y-6 h-full overflow-y-auto">
+          <div className="cyber-text text-lg font-bold mb-8 text-center md:text-left">
+            {translations.system.platformStatus}
+          </div>
           
-          {menuItems.map((item) => (
-            <Link
-              key={item.label}
-              to={item.href}
-              className={`flex items-center space-x-3 cyber-button w-full mb-4 ${
-                location.pathname === item.href ? 'bg-matrix-green/20' : ''
-              }`}
-              onClick={() => setIsOpen(false)}
-            >
-              <item.icon className="h-5 w-5" />
-              <span>{item.label}</span>
-            </Link>
-          ))}
+          <nav className="space-y-4">
+            {menuItems.map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                className={`flex items-center space-x-3 cyber-button w-full ${
+                  location.pathname === item.href ? 'bg-matrix-green/20' : ''
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                <item.icon className="h-5 w-5 flex-shrink-0" />
+                <span className="truncate">{item.label}</span>
+              </Link>
+            ))}
+          </nav>
 
           <div className="mt-8 p-4 cyber-panel">
             <div className="cyber-text text-sm mb-2">{translations.system.systemStatus}</div>
