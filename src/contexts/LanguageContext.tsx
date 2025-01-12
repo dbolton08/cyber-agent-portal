@@ -4,59 +4,71 @@ type Language = 'en' | 'es' | 'fr' | 'de' | 'it' | 'zh';
 
 interface Translations {
   // Common translations
+  common: {
+    welcome: string;
+    subtitle: string;
+    initConnection: string;
+    projectOverview: string;
+    liveStatus: string;
+    online: string;
+  };
+  features: {
+    neuralProcessing: string;
+    neuralDesc: string;
+    secureProtocol: string;
+    secureDesc: string;
+    performance: string;
+    performanceDesc: string;
+    aiAssistant: string;
+    aiAssistantDesc: string;
+    quantumComputing: string;
+    quantumDesc: string;
+    neuralInterface: string;
+    neuralInterfaceDesc: string;
+  };
   decryptingData: string;
   selectLanguage: string;
   chooseLanguage: string;
   error: string;
   errorFetchingData: string;
-  
-  // Navigation
   agents: string;
   console: string;
   systems: string;
   network: string;
   platformStatus: string;
   systemStatus: string;
-  online: string;
   home: string;
-  
-  // Stats
   totalStake: string;
   epoch: string;
   marketCap: string;
   tps: string;
   validators: string;
-  
-  // Network
-  networkTitle: string;
-  networkActivity: string;
-  connectionStrength: string;
-  activeNodes: string;
-  securityLevel: string;
-  maximum: string;
-  networkLoad: string;
-  recentEvents: string;
-  securityScanCompleted: string;
-  bandwidthOptimization: string;
-  
-  // Agents
-  matrixAiAgent: string;
-  agentDescription: string;
-  capabilities: string;
-  nlpCapability: string;
-  marketAnalysis: string;
-  problemSolving: string;
-  accessAgent: string;
-  aiAgentInterface: string;
-  aiLaunchedTokens: string;
-  launchDate: string;
-  matrixAiDesc: string;
-  neuralNetDesc: string;
-  cyberCoreDesc: string;
 }
 
 const translations: Record<Language, Translations> = {
   en: {
+    common: {
+      welcome: "MATRIX ORACLE",
+      subtitle: "Enter a realm where artificial intelligence and human consciousness converge on the Sui blockchain.",
+      initConnection: "Initialize Connection",
+      projectOverview: "PROJECT OVERVIEW",
+      liveStatus: "System Status: Online",
+      online: "Online"
+    },
+    features: {
+      neuralProcessing: "Neural Processing",
+      neuralDesc: "Advanced AI algorithms powered by quantum computing",
+      secureProtocol: "Secure Protocol",
+      secureDesc: "Military-grade encryption for all operations",
+      performance: "High Performance",
+      performanceDesc: "Leveraging Sui's parallel execution engine",
+      aiAssistant: "AI Assistant",
+      aiAssistantDesc: "Your personal guide through the digital realm",
+      quantumComputing: "Quantum Computing",
+      quantumDesc: "Harnessing the power of quantum algorithms",
+      neuralInterface: "Neural Interface",
+      neuralInterfaceDesc: "Direct brain-computer interaction capabilities"
+    },
     decryptingData: "Decrypting agent data...",
     selectLanguage: "Select Language",
     chooseLanguage: "Choose your preferred language",
@@ -68,38 +80,36 @@ const translations: Record<Language, Translations> = {
     network: "Network",
     platformStatus: "Platform Status",
     systemStatus: "System Status",
-    online: "Online",
     home: "Home",
     totalStake: "Total Stake",
     epoch: "Epoch",
     marketCap: "Market Cap",
     tps: "TPS (Peak)",
-    validators: "Validators",
-    networkTitle: "Network Status",
-    networkActivity: "Network Activity",
-    connectionStrength: "Connection Strength",
-    activeNodes: "Active Nodes",
-    securityLevel: "Security Level",
-    maximum: "Maximum",
-    networkLoad: "Network Load",
-    recentEvents: "Recent Events",
-    securityScanCompleted: "Security scan completed",
-    bandwidthOptimization: "Bandwidth optimization complete",
-    matrixAiAgent: "MATRIX AI AGENT",
-    agentDescription: "Interface with our advanced AI agent, trained on the principles of the Matrix.",
-    capabilities: "Capabilities",
-    nlpCapability: "Natural Language Processing",
-    marketAnalysis: "Market Analysis",
-    problemSolving: "Problem Solving",
-    accessAgent: "Access Agent",
-    aiAgentInterface: "AI Agent Interface",
-    aiLaunchedTokens: "AI LAUNCHED TOKENS",
-    launchDate: "Launch Date",
-    matrixAiDesc: "AI-powered DeFi protocol",
-    neuralNetDesc: "Decentralized ML network",
-    cyberCoreDesc: "AI governance token"
+    validators: "Validators"
   },
   es: {
+    common: {
+      welcome: "ORÁCULO MATRIX",
+      subtitle: "Entra en un reino donde la inteligencia artificial y la consciencia humana convergen en la blockchain Sui.",
+      initConnection: "Iniciar Conexión",
+      projectOverview: "DESCRIPCIÓN DEL PROYECTO",
+      liveStatus: "Estado del Sistema: En línea",
+      online: "En línea"
+    },
+    features: {
+      neuralProcessing: "Procesamiento Neural",
+      neuralDesc: "Algoritmos avanzados de IA impulsados por computación cuántica",
+      secureProtocol: "Protocolo Seguro",
+      secureDesc: "Encriptación de grado militar para todas las operaciones",
+      performance: "Alto Rendimiento",
+      performanceDesc: "Aprovechando el motor de ejecución paralela de Sui",
+      aiAssistant: "Asistente de IA",
+      aiAssistantDesc: "Tu guía personal a través del reino digital",
+      quantumComputing: "Computación Cuántica",
+      quantumDesc: "Aprovechando el poder de los algoritmos cuánticos",
+      neuralInterface: "Interfaz Neural",
+      neuralInterfaceDesc: "Capacidades directas de interacción cerebro-computadora"
+    },
     decryptingData: "Descifrando datos del agente...",
     selectLanguage: "Seleccionar Idioma",
     chooseLanguage: "Elige tu idioma preferido",
@@ -111,36 +121,12 @@ const translations: Record<Language, Translations> = {
     network: "Red",
     platformStatus: "Estado de la Plataforma",
     systemStatus: "Estado del Sistema",
-    online: "En línea",
     home: "Inicio",
     totalStake: "Stake Total",
     epoch: "Época",
     marketCap: "Cap. de Mercado",
     tps: "TPS (Pico)",
-    validators: "Validadores",
-    networkTitle: "Estado de la Red",
-    networkActivity: "Actividad de Red",
-    connectionStrength: "Fuerza de Conexión",
-    activeNodes: "Nodos Activos",
-    securityLevel: "Nivel de Seguridad",
-    maximum: "Máximo",
-    networkLoad: "Carga de Red",
-    recentEvents: "Eventos Recientes",
-    securityScanCompleted: "Escaneo de seguridad completado",
-    bandwidthOptimization: "Optimización de ancho de banda completada",
-    matrixAiAgent: "AGENTE IA MATRIX",
-    agentDescription: "Interactúa con nuestro agente de IA avanzado, entrenado en los principios de Matrix.",
-    capabilities: "Capacidades",
-    nlpCapability: "Procesamiento de Lenguaje Natural",
-    marketAnalysis: "Análisis de Mercado",
-    problemSolving: "Resolución de Problemas",
-    accessAgent: "Acceder al Agente",
-    aiAgentInterface: "Interfaz del Agente IA",
-    aiLaunchedTokens: "TOKENS LANZADOS POR IA",
-    launchDate: "Fecha de Lanzamiento",
-    matrixAiDesc: "Protocolo DeFi impulsado por IA",
-    neuralNetDesc: "Red de aprendizaje automático",
-    cyberCoreDesc: "Token de gobernanza IA"
+    validators: "Validadores"
   },
   fr: {
     decryptingData: "Déchiffrer les données de l'agent...",
