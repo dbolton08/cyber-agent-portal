@@ -7,13 +7,13 @@ const TopNav = () => {
       <div className="container mx-auto h-full flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Link to="/" className="cyber-text text-xl font-bold hover:text-matrix-light transition-colors">
-            CIPHER
+            Matrix Oracle
           </Link>
         </div>
         
         <div className="flex items-center space-x-6">
           <a
-            href="https://twitter.com"
+            href="https://x.com/MatrixOracleSui"
             target="_blank"
             rel="noopener noreferrer"
             className="cyber-text hover:text-matrix-light transition-colors"
