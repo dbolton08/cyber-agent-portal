@@ -17,7 +17,7 @@ const Agents = () => {
       launchDate: "2024-02-15",
       marketCap: "$45.2M",
       growth: "+324%",
-      description: "AI-powered DeFi protocol launched after analyzing market conditions"
+      description: translations.matrixAiDesc
     },
     {
       name: "NeuralNet",
@@ -25,7 +25,7 @@ const Agents = () => {
       launchDate: "2024-01-30",
       marketCap: "$28.7M",
       growth: "+156%",
-      description: "Decentralized machine learning network token"
+      description: translations.neuralNetDesc
     },
     {
       name: "CyberCore",
@@ -33,7 +33,7 @@ const Agents = () => {
       launchDate: "2024-03-01",
       marketCap: "$15.3M",
       growth: "+89%",
-      description: "AI governance token for decentralized systems"
+      description: translations.cyberCoreDesc
     }
   ];
 
@@ -51,10 +51,10 @@ const Agents = () => {
       <main className="pt-24 pb-16 px-4 md:ml-0 md:mr-64 relative z-10">
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <GlitchText text="MATRIX AI AGENT" className="text-3xl" />
+            <GlitchText text={translations.matrixAiAgent} className="text-3xl" />
             <Link to="/" className="cyber-button flex items-center gap-2">
               <Home className="w-4 h-4" />
-              <span>Home</span>
+              <span>{translations.home}</span>
             </Link>
           </div>
 
@@ -62,23 +62,22 @@ const Agents = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <p className="cyber-text text-lg">
-                  Interface with our advanced AI agent, trained on the principles of the Matrix.
-                  Unlock the secrets of the digital realm through natural conversation.
+                  {translations.agentDescription}
                 </p>
                 <div className="space-y-4">
-                  <h3 className="text-xl cyber-text">Capabilities:</h3>
+                  <h3 className="text-xl cyber-text">{translations.capabilities}:</h3>
                   <ul className="space-y-3">
                     <li className="flex items-center space-x-3">
                       <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
-                      <span>Natural Language Processing</span>
+                      <span>{translations.nlpCapability}</span>
                     </li>
                     <li className="flex items-center space-x-3">
                       <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
-                      <span>Market Analysis & Token Launch</span>
+                      <span>{translations.marketAnalysis}</span>
                     </li>
                     <li className="flex items-center space-x-3">
                       <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
-                      <span>Advanced Problem Solving</span>
+                      <span>{translations.problemSolving}</span>
                     </li>
                   </ul>
                 </div>
@@ -88,14 +87,14 @@ const Agents = () => {
                   rel="noopener noreferrer"
                   className="cyber-button inline-flex items-center space-x-2"
                 >
-                  <span>Access AI Agent</span>
+                  <span>{translations.accessAgent}</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
               <div className="cyber-panel p-4">
                 <img 
                   src="/lovable-uploads/24412fd5-2e8b-4dd9-8497-3a6cb8a279a6.png"
-                  alt="Matrix AI Agent Interface"
+                  alt={translations.aiAgentInterface}
                   className="w-full h-auto rounded-lg border border-matrix-green/30"
                 />
               </div>
@@ -103,7 +102,7 @@ const Agents = () => {
           </div>
 
           <div className="cyber-panel p-8">
-            <GlitchText text="AI LAUNCHED TOKENS" className="text-2xl mb-6" />
+            <GlitchText text={translations.aiLaunchedTokens} className="text-2xl mb-6" />
             <div className="grid md:grid-cols-3 gap-6">
               {launchedTokens.map((token) => (
                 <div key={token.name} className="cyber-panel p-6 space-y-4">
@@ -119,11 +118,11 @@ const Agents = () => {
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-matrix-green/60">Market Cap</span>
+                      <span className="text-matrix-green/60">{translations.marketCap}</span>
                       <span className="font-mono">{token.marketCap}</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-matrix-green/60">Launch Date</span>
+                      <span className="text-matrix-green/60">{translations.launchDate}</span>
                       <span className="font-mono">{token.launchDate}</span>
                     </div>
                   </div>
