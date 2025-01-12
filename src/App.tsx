@@ -7,6 +7,7 @@ import { useState } from "react";
 import Index from "./pages/Index";
 import Console from "./pages/Console";
 import SplashScreen from "./components/SplashScreen";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 const queryClient = new QueryClient();
 
@@ -15,20 +16,22 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        {showSplash ? (
-          <SplashScreen onComplete={() => setShowSplash(false)} />
-        ) : (
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/console" element={<Console />} />
-            </Routes>
-          </BrowserRouter>
-        )}
-      </TooltipProvider>
+      <LanguageProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          {showSplash ? (
+            <SplashScreen onComplete={() => setShowSplash(false)} />
+          ) : (
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/console" element={<Console />} />
+              </Routes>
+            </BrowserRouter>
+          )}
+        </TooltipProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 };

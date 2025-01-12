@@ -6,10 +6,12 @@ import HexagonGrid from "../components/HexagonGrid";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Database, Brain, Cpu, Network, Shield } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const { translations } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -45,18 +47,52 @@ const Index = () => {
                 SYSTEM ONLINE
               </div>
               <GlitchText 
-                text="MATRIX ORACLE"
+                text={translations.welcome}
                 className="block text-4xl md:text-6xl mb-6"
               />
               <p className="cyber-text text-lg md:text-xl mb-8 leading-relaxed max-w-3xl">
-                Enter a realm where artificial intelligence and human consciousness converge on the Sui blockchain. 
-                The Matrix Oracle stands as your gateway to digital enlightenment, powered by 
-                next-generation AI agents ready to unlock the secrets of the digital universe.
+                {translations.subtitle}
               </p>
               <Link to="/console" className="cyber-button group relative">
-                <span className="relative z-10">Initialize Connection</span>
+                <span className="relative z-10">{translations.initConnection}</span>
                 <div className="absolute inset-0 bg-matrix-green/20 group-hover:bg-matrix-green/30 transition-colors duration-300" />
               </Link>
+            </div>
+          </div>
+
+          {/* AI Agent Section */}
+          <div className="cyber-panel p-8 mb-12">
+            <h2 className="text-2xl mb-6 cyber-text">Matrix AI Agent</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <p className="text-matrix-green/80">
+                  Interact with our advanced AI agent, trained on the principles of the Matrix.
+                </p>
+                <iframe
+                  src="https://matrixoracle.xyz/oldindex.html"
+                  className="w-full h-[600px] border border-matrix-green/30 rounded-lg bg-cyber-dark"
+                  title="Matrix Oracle AI Agent"
+                />
+              </div>
+              <div className="space-y-8">
+                <div className="cyber-panel p-6">
+                  <h3 className="text-xl mb-4 cyber-text">Agent Capabilities</h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-center space-x-3">
+                      <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
+                      <span>Natural Language Processing</span>
+                    </li>
+                    <li className="flex items-center space-x-3">
+                      <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
+                      <span>Blockchain Integration</span>
+                    </li>
+                    <li className="flex items-center space-x-3">
+                      <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
+                      <span>Advanced Problem Solving</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -65,18 +101,18 @@ const Index = () => {
             {[
               {
                 icon: Brain,
-                title: "Neural Processing",
-                description: "Advanced AI algorithms powered by quantum computing"
+                title: translations.neuralProcessing,
+                description: translations.neuralDesc
               },
               {
                 icon: Database,
-                title: "Sui Integration",
-                description: "Seamless blockchain operations on Sui's high-performance network"
+                title: translations.suiIntegration,
+                description: translations.suiDesc
               },
               {
                 icon: Shield,
-                title: "Secure Protocol",
-                description: "Military-grade encryption for all operations"
+                title: translations.secureProtocol,
+                description: translations.secureDesc
               }
             ].map((feature, i) => (
               <div key={feature.title} 
@@ -98,18 +134,18 @@ const Index = () => {
               />
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                  <h3 className="text-xl cyber-text">High Performance</h3>
+                  <h3 className="text-xl cyber-text">{translations.performance}</h3>
                   <p className="text-matrix-green/80">
-                    Leveraging Sui's parallel execution engine for unprecedented throughput and minimal latency.
+                    {translations.performanceDesc}
                   </p>
                   <div className="h-2 bg-cyber-dark rounded overflow-hidden">
                     <div className="h-full bg-matrix-light w-[95%] rounded-r animate-pulse" />
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-xl cyber-text">Smart Contracts</h3>
+                  <h3 className="text-xl cyber-text">{translations.smartContracts}</h3>
                   <p className="text-matrix-green/80">
-                    Advanced Move-based smart contracts ensuring secure and efficient operations.
+                    {translations.smartContractsDesc}
                   </p>
                   <div className="h-2 bg-cyber-dark rounded overflow-hidden">
                     <div className="h-full bg-matrix-light w-[90%] rounded-r animate-pulse" />

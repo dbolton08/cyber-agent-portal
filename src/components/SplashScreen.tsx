@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { Progress } from "@/components/ui/progress";
 import GlitchText from "./GlitchText";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SplashScreenProps {
   onComplete: () => void;
 }
 
 const SplashScreen = ({ onComplete }: SplashScreenProps) => {
-  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
+  const { setLanguage } = useLanguage();
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
 
@@ -16,13 +17,12 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
     { code: 'es', label: 'Español' },
     { code: 'zh', label: '中文' },
     { code: 'ja', label: '日本語' },
-  ];
+  ] as const;
 
-  const handleLanguageSelect = async (lang: string) => {
-    setSelectedLanguage(lang);
+  const handleLanguageSelect = async (lang: typeof languages[number]['code']) => {
+    setLanguage(lang);
     setLoading(true);
     
-    // Simulate loading progress
     for (let i = 0; i <= 100; i += 10) {
       await new Promise(resolve => setTimeout(resolve, 200));
       setProgress(i);
