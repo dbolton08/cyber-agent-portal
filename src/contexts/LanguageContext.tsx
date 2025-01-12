@@ -39,7 +39,9 @@ const translations = {
     platformStatus: "Platform Status",
     systemStatus: "System Status",
     online: "Online",
-    projectOverview: "PROJECT OVERVIEW"
+    projectOverview: "PROJECT OVERVIEW",
+    error: "Error",
+    errorFetchingData: "Error fetching data. Please try again later."
   },
   es: {
     welcome: "ORÁCULO MATRIX",
@@ -71,7 +73,9 @@ const translations = {
     platformStatus: "Estado de la Plataforma",
     systemStatus: "Estado del Sistema",
     online: "En línea",
-    projectOverview: "DESCRIPCIÓN DEL PROYECTO"
+    projectOverview: "DESCRIPCIÓN DEL PROYECTO",
+    error: "Error",
+    errorFetchingData: "Error al obtener datos. Por favor, inténtelo más tarde."
   },
   fr: {
     welcome: "ORACLE MATRIX",
@@ -103,7 +107,9 @@ const translations = {
     platformStatus: "État de la Plateforme",
     systemStatus: "État du Système",
     online: "En ligne",
-    projectOverview: "APERÇU DU PROJET"
+    projectOverview: "APERÇU DU PROJET",
+    error: "Erreur",
+    errorFetchingData: "Erreur lors de la récupération des données. Veuillez réessayer plus tard."
   },
   de: {
     welcome: "MATRIX ORAKEL",
@@ -135,7 +141,9 @@ const translations = {
     platformStatus: "Plattformstatus",
     systemStatus: "Systemstatus",
     online: "Online",
-    projectOverview: "PROJEKTÜBERSICHT"
+    projectOverview: "PROJEKTÜBERSICHT",
+    error: "Fehler",
+    errorFetchingData: "Fehler beim Abrufen der Daten. Bitte versuchen Sie es später erneut."
   },
   it: {
     welcome: "ORACOLO MATRIX",
@@ -167,7 +175,9 @@ const translations = {
     platformStatus: "Stato Piattaforma",
     systemStatus: "Stato Sistema",
     online: "Online",
-    projectOverview: "PANORAMICA PROGETTO"
+    projectOverview: "PANORAMICA PROGETTO",
+    error: "Errore",
+    errorFetchingData: "Errore nel recupero dei dati. Si prega di riprovare più tardi."
   },
   zh: {
     welcome: "矩阵神谕",
@@ -199,7 +209,9 @@ const translations = {
     platformStatus: "平台状态",
     systemStatus: "系统状态",
     online: "在线",
-    projectOverview: "项目概述"
+    projectOverview: "项目概述",
+    error: "错误",
+    errorFetchingData: "获取数据时出错。请稍后再试。"
   }
 };
 

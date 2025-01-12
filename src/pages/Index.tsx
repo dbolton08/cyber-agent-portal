@@ -6,7 +6,7 @@ import HexagonGrid from "../components/HexagonGrid";
 import SuiStats from "../components/SuiStats";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Database, Shield, Cpu, Network, ExternalLink } from "lucide-react";
+import { Database, Shield, Network } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
@@ -16,14 +16,6 @@ const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const { translations } = useLanguage();
   const { toast } = useToast();
-
-  const handleConnectSui = () => {
-    toast({
-      title: "SUI Integration Coming Soon",
-      description: "The SUI wallet integration will be available in the next update.",
-      duration: 3000,
-    });
-  };
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -46,7 +38,6 @@ const Index = () => {
       
       <main className="relative z-10 pt-24 pb-16 px-4 md:px-8 transition-all duration-300 md:pr-72">
         <div className="container mx-auto max-w-6xl">
-          {/* Hero Section */}
           <div className="cyber-panel p-8 mb-8 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-cyber-dark/90 to-transparent z-10" />
             <div className="relative z-20">
@@ -69,26 +60,24 @@ const Index = () => {
             </div>
           </div>
 
-          {/* SUI Network Stats */}
           <SuiStats />
 
-          {/* Feature Grid */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
               {
                 icon: Database,
-                title: "Neural Processing",
-                description: "Advanced AI algorithms powered by quantum computing"
+                title: translations.neuralProcessing,
+                description: translations.neuralDesc
               },
               {
                 icon: Shield,
-                title: "Secure Protocol",
-                description: "Military-grade encryption for all operations"
+                title: translations.secureProtocol,
+                description: translations.secureDesc
               },
               {
                 icon: Network,
-                title: "High Performance",
-                description: "Leveraging Sui's parallel execution engine for unprecedented throughput"
+                title: translations.performance,
+                description: translations.performanceDesc
               }
             ].map((feature, i) => (
               <div key={feature.title} 
@@ -101,22 +90,16 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Project Description */}
           <div className="cyber-panel p-8 mb-8">
-            <GlitchText text="PROJECT OVERVIEW" className="text-2xl mb-6" />
+            <GlitchText text={translations.projectOverview} className="text-2xl mb-6" />
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <p className="cyber-text leading-relaxed">
-                  Matrix Oracle represents the convergence of artificial intelligence and blockchain technology. 
-                  Our AI agents analyze market conditions, predict trends, and execute strategies with unprecedented precision.
-                </p>
-                <p className="cyber-text leading-relaxed">
-                  Built on the Sui blockchain, we leverage its high-performance infrastructure to deliver 
-                  real-time analysis and execution capabilities that were previously impossible.
+                  {translations.subtitle}
                 </p>
                 <div className="flex items-center space-x-2 text-matrix-light">
                   <div className="h-2 w-2 bg-matrix-green rounded-full animate-pulse" />
-                  <span>Live System Status: Operational</span>
+                  <span>{translations.liveStatus}</span>
                 </div>
               </div>
               <div className="cyber-panel p-4">
