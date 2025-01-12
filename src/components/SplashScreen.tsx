@@ -41,7 +41,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         <img 
           src="/lovable-uploads/94d7f101-f080-48a9-85c9-1ccfa746eafd.png" 
           alt="Matrix Oracle Logo" 
-          className="h-32 w-32 mb-8 animate-pulse"
+          className="h-40 w-40 mb-8 animate-pulse" // Increased from h-32 w-32
         />
         <div className="w-64 space-y-4">
           <Progress value={progress} className="h-1 bg-matrix-dark" />
@@ -58,7 +58,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       <img 
         src="/lovable-uploads/94d7f101-f080-48a9-85c9-1ccfa746eafd.png" 
         alt="Matrix Oracle Logo" 
-        className="h-48 w-48 mb-12"
+        className="h-56 w-56 mb-12" // Increased from h-48 w-48
       />
       <div className="space-y-12 text-center">
         <GlitchText 

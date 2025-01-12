@@ -23,20 +23,20 @@ const Systems = () => {
       <main className="pt-24 pb-16 px-4 md:ml-0 md:mr-64 relative z-10">
         <div className="container mx-auto">
           <div className="cyber-panel p-8 mb-8">
-            <GlitchText text="SYSTEM STATUS" className="text-3xl mb-6" />
+            <GlitchText text={translations.system.systemStatus} className="text-3xl mb-6" />
             
             <div className="grid md:grid-cols-2 gap-8">
               {/* System Metrics */}
               <div className="cyber-panel p-6 space-y-6">
                 <div className="flex items-center space-x-3">
                   <Server className="w-6 h-6 text-matrix-green" />
-                  <h3 className="text-xl cyber-text">Core Systems</h3>
+                  <h3 className="text-xl cyber-text">{translations.system.systems}</h3>
                 </div>
                 
                 {[
-                  { name: "CPU Usage", value: 42, icon: Cpu },
-                  { name: "Memory Allocation", value: 78, icon: CircuitBoard },
-                  { name: "Storage", value: 65, icon: HardDrive }
+                  { name: translations.system.cpuUsage, value: 42, icon: Cpu },
+                  { name: translations.system.memoryAllocation, value: 78, icon: CircuitBoard },
+                  { name: translations.system.storage, value: 65, icon: HardDrive }
                 ].map((metric) => (
                   <div key={metric.name} className="space-y-2">
                     <div className="flex items-center justify-between">
@@ -58,13 +58,13 @@ const Systems = () => {
 
               {/* System Processes */}
               <div className="cyber-panel p-6">
-                <h3 className="text-xl cyber-text mb-4">Active Processes</h3>
+                <h3 className="text-xl cyber-text mb-4">{translations.system.activeProcesses}</h3>
                 <div className="space-y-4">
                   {[
-                    { name: "Matrix.sys", status: "Running", pid: "0x1A2B" },
-                    { name: "Neural.net", status: "Active", pid: "0x3C4D" },
-                    { name: "Crypto.exe", status: "Standby", pid: "0x5E6F" },
-                    { name: "Guard.sys", status: "Running", pid: "0x7G8H" }
+                    { name: "Matrix.sys", status: translations.system.online, pid: "0x1A2B" },
+                    { name: "Neural.net", status: translations.system.online, pid: "0x3C4D" },
+                    { name: "Crypto.exe", status: translations.system.online, pid: "0x5E6F" },
+                    { name: "Guard.sys", status: translations.system.online, pid: "0x7G8H" }
                   ].map((process) => (
                     <div 
                       key={process.pid}

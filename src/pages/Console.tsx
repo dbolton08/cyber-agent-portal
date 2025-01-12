@@ -7,10 +7,11 @@ import { Terminal } from 'lucide-react';
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Console = () => {
+  const { translations } = useLanguage();
   const [input, setInput] = useState('');
   const [history, setHistory] = useState<string[]>([
-    'Matrix Oracle v1.0.0',
-    'Type "help" for available commands'
+    translations.console.title + ' v1.0.0',
+    translations.console.availableCommands
   ]);
   const consoleEndRef = useRef<HTMLDivElement>(null);
 
@@ -24,31 +25,18 @@ const Console = () => {
 
   const handleCommand = (cmd: string) => {
     const commands: Record<string, () => string> = {
-      help: () => `Available commands:
-help - Show this help message
-clear - Clear console
-status - Check system status
-scan - Scan network for nodes
-connect - Establish secure connection
-disconnect - Terminate connection
-analyze - Analyze market conditions
-deploy - Deploy smart contract
-mine - Mine SUI blocks
-hack - Attempt system breach (simulated)
-upgrade - Upgrade neural network
-train - Train AI model
-market - Show market statistics
-network - Display network metrics
-ping - Test network latency
-encrypt - Encrypt message
-decrypt - Decrypt message
-benchmark - Run system benchmark`,
+      help: () => translations.console.availableCommands + `:\n
+help - ${translations.console.availableCommands}
+clear - ${translations.console.description}
+status - ${translations.system.systemStatus}
+scan - ${translations.network.networkActivity}
+connect - ${translations.system.initConnection}`,
       clear: () => {
-        setHistory(['Matrix Oracle v1.0.0']);
+        setHistory([translations.console.title + ' v1.0.0']);
         return '';
       },
-      status: () => 'All systems operational. Neural network at 98.7% efficiency.',
-      scan: () => 'Scanning network...\nFound 42 active nodes\nDetected 3 potential threats\nNetwork security: OPTIMAL',
+      status: () => translations.system.systemStatus + ': ' + translations.system.online,
+      scan: () => translations.network.networkActivity + '...\n' + translations.network.activeNodes + ': 42',
       connect: () => 'Establishing secure connection...\nInitializing quantum encryption...\nConnection established',
       disconnect: () => 'Disconnecting...\nSaving neural state...\nConnection terminated',
       analyze: () => 'Analyzing market conditions...\nBullish patterns detected\nAI confidence: 89.4%\nRecommended action: ACCUMULATE',
@@ -65,7 +53,7 @@ benchmark - Run system benchmark`,
       benchmark: () => 'Running benchmark...\nCPU Score: 9,842\nMemory Score: 7,654\nNetwork Score: 8,921'
     };
 
-    const newOutput = commands[cmd.toLowerCase()]?.() || `Command not found: ${cmd}`;
+    const newOutput = commands[cmd.toLowerCase()]?.() || `${translations.error}: ${cmd}`;
     if (newOutput) {
       setHistory(prev => [...prev, `> ${cmd}`, ...newOutput.split('\n')]);
     }
@@ -95,7 +83,7 @@ benchmark - Run system benchmark`,
           <div className="cyber-panel p-6 mb-8">
             <div className="flex items-center mb-4">
               <Terminal className="w-6 h-6 mr-2" />
-              <GlitchText text="MATRIX CONSOLE" className="text-2xl" />
+              <GlitchText text={translations.console.title} className="text-2xl" />
             </div>
             
             <div className="cyber-panel bg-cyber-dark/90 p-4 h-[60vh] overflow-y-auto font-mono text-sm space-y-2">
@@ -114,6 +102,7 @@ benchmark - Run system benchmark`,
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 className="flex-1 bg-transparent border-none outline-none text-matrix-green font-mono"
+                placeholder={translations.console.enterCommand}
                 autoFocus
               />
             </form>
