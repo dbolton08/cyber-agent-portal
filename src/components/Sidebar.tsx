@@ -9,10 +9,10 @@ const Sidebar = () => {
   const { translations } = useLanguage();
 
   const menuItems = [
-    { icon: User, label: translations.agents, href: "/agents" },
-    { icon: Terminal, label: translations.console, href: "/console" },
-    { icon: Database, label: translations.systems, href: "/systems" },
-    { icon: Network, label: translations.network, href: "/network" },
+    { icon: User, label: translations.system.agents, href: "/agents" },
+    { icon: Terminal, label: translations.system.console, href: "/console" },
+    { icon: Database, label: translations.system.systems, href: "/systems" },
+    { icon: Network, label: translations.system.network, href: "/network" },
   ];
 
   return (
@@ -30,7 +30,7 @@ const Sidebar = () => {
         }`}
       >
         <div className="p-4 space-y-6">
-          <div className="cyber-text text-lg font-bold mb-8">{translations.platformStatus}</div>
+          <div className="cyber-text text-lg font-bold mb-8">{translations.system.platformStatus}</div>
           
           {menuItems.map((item) => (
             <Link
@@ -47,10 +47,10 @@ const Sidebar = () => {
           ))}
 
           <div className="mt-8 p-4 cyber-panel">
-            <div className="cyber-text text-sm mb-2">{translations.systemStatus}</div>
+            <div className="cyber-text text-sm mb-2">{translations.system.systemStatus}</div>
             <div className="flex items-center space-x-2">
               <div className="h-2 w-2 rounded-full bg-matrix-green animate-cyber-pulse" />
-              <span className="text-sm">{translations.online}</span>
+              <span className="text-sm">{translations.system.online}</span>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import { Language, Translations } from '../translations/types';
-import { translations } from '../translations';
+import { en } from '../translations/languages/en';
+import { es } from '../translations/languages/es';
 
 interface LanguageContextType {
   language: Language;
@@ -8,16 +9,27 @@ interface LanguageContextType {
   translations: Translations;
 }
 
+const defaultTranslations = en;
+
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
   const [language, setLanguage] = useState<Language>('en');
 
+  const getTranslations = (lang: Language): Translations => {
+    switch (lang) {
+      case 'es':
+        return es;
+      default:
+        return defaultTranslations;
+    }
+  };
+
   return (
     <LanguageContext.Provider value={{ 
       language, 
       setLanguage,
-      translations: translations[language]
+      translations: getTranslations(language)
     }}>
       {children}
     </LanguageContext.Provider>
