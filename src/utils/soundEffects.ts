@@ -6,7 +6,7 @@ const sounds = {
 
 export const playSound = (type: keyof typeof sounds) => {
   sounds[type].currentTime = 0;
-  sounds[type].volume = 0.2;
+  sounds[type].volume = type === 'startup' ? 0.15 : 0.2;
   sounds[type].play().catch(() => {
     // Ignore autoplay errors
   });
