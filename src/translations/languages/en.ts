@@ -1,4 +1,6 @@
-export const en = {
+import { Translations } from '../types';
+
+export const en: Translations = {
   common: {
     welcome: "MATRIX ORACLE",
     subtitle: "Enter a realm where artificial intelligence and human consciousness converge on the Sui blockchain.",
@@ -87,5 +89,14 @@ export const en = {
     quantumDesc: "Next-generation processing power",
     neuralInterface: "Neural Interface",
     neuralInterfaceDesc: "Direct neural connection capabilities"
+  },
+  errors: {
+    error: "Error",
+    errorFetchingData: "Error fetching data",
+    totalStake: "Total Stake",
+    epoch: "Epoch",
+    marketCap: "Market Cap",
+    tps: "TPS",
+    validators: "Validators"
   }
 };
